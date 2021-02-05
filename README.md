@@ -8,7 +8,7 @@ Final project of microcontroller course of IUT
 ## Equipments
     ATmega32
     K0108 GLCD
-    Push button 6x
+    Push button x6
 
 or
 ## Simulator
