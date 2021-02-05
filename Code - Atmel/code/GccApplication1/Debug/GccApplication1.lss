@@ -1,0 +1,2930 @@
+
+GccApplication1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000010d4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000232  00800060  000010d4  00001168  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000088  00800292  00800292  0000139a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000139a  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000013cc  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000078  00000000  00000000  00001408  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000154e  00000000  00000000  00001480  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000743  00000000  00000000  000029ce  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000cc1  00000000  00000000  00003111  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000134  00000000  00000000  00003dd4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000446  00000000  00000000  00003f08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000992  00000000  00000000  0000434e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000d0  00000000  00000000  00004ce0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 36 00 	jmp	0x6c	; 0x6c <__ctors_end>
+       4:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+       8:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+       c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      10:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      14:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      18:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      1c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      20:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      24:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      28:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      2c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      30:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      34:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      38:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      3c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      40:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      44:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      48:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      4c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      50:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+      54:	46 02       	muls	r20, r22
+      56:	55 02       	muls	r21, r21
+      58:	64 02       	muls	r22, r20
+      5a:	73 02       	muls	r23, r19
+      5c:	82 02       	muls	r24, r18
+      5e:	bd 02       	muls	r27, r29
+      60:	bd 02       	muls	r27, r29
+      62:	bd 02       	muls	r27, r29
+      64:	bd 02       	muls	r27, r29
+      66:	91 02       	muls	r25, r17
+      68:	a0 02       	muls	r26, r16
+      6a:	af 02       	muls	r26, r31
+
+0000006c <__ctors_end>:
+      6c:	11 24       	eor	r1, r1
+      6e:	1f be       	out	0x3f, r1	; 63
+      70:	cf e5       	ldi	r28, 0x5F	; 95
+      72:	d8 e0       	ldi	r29, 0x08	; 8
+      74:	de bf       	out	0x3e, r29	; 62
+      76:	cd bf       	out	0x3d, r28	; 61
+
+00000078 <__do_copy_data>:
+      78:	12 e0       	ldi	r17, 0x02	; 2
+      7a:	a0 e6       	ldi	r26, 0x60	; 96
+      7c:	b0 e0       	ldi	r27, 0x00	; 0
+      7e:	e4 ed       	ldi	r30, 0xD4	; 212
+      80:	f0 e1       	ldi	r31, 0x10	; 16
+      82:	02 c0       	rjmp	.+4      	; 0x88 <__do_copy_data+0x10>
+      84:	05 90       	lpm	r0, Z+
+      86:	0d 92       	st	X+, r0
+      88:	a2 39       	cpi	r26, 0x92	; 146
+      8a:	b1 07       	cpc	r27, r17
+      8c:	d9 f7       	brne	.-10     	; 0x84 <__do_copy_data+0xc>
+
+0000008e <__do_clear_bss>:
+      8e:	23 e0       	ldi	r18, 0x03	; 3
+      90:	a2 e9       	ldi	r26, 0x92	; 146
+      92:	b2 e0       	ldi	r27, 0x02	; 2
+      94:	01 c0       	rjmp	.+2      	; 0x98 <.do_clear_bss_start>
+
+00000096 <.do_clear_bss_loop>:
+      96:	1d 92       	st	X+, r1
+
+00000098 <.do_clear_bss_start>:
+      98:	aa 31       	cpi	r26, 0x1A	; 26
+      9a:	b2 07       	cpc	r27, r18
+      9c:	e1 f7       	brne	.-8      	; 0x96 <.do_clear_bss_loop>
+      9e:	0e 94 e9 03 	call	0x7d2	; 0x7d2 <main>
+      a2:	0c 94 68 08 	jmp	0x10d0	; 0x10d0 <_exit>
+
+000000a6 <__bad_interrupt>:
+      a6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000aa <glcd_cmd>:
+void glcd_game_over();
+void glcd_victory();
+
+void glcd_cmd(unsigned char cmd) //subroutine for command
+{
+	PORTC=cmd;
+      aa:	85 bb       	out	0x15, r24	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+      ac:	8f e9       	ldi	r24, 0x9F	; 159
+      ae:	9f e0       	ldi	r25, 0x0F	; 15
+      b0:	01 97       	sbiw	r24, 0x01	; 1
+      b2:	f1 f7       	brne	.-4      	; 0xb0 <glcd_cmd+0x6>
+      b4:	00 c0       	rjmp	.+0      	; 0xb6 <glcd_cmd+0xc>
+      b6:	00 00       	nop
+	_delay_ms(2);
+	PORTD&=~(1<<2); // SET RS = 0 --> COMMAND
+      b8:	92 98       	cbi	0x12, 2	; 18
+	PORTD&=~(1<<1); // SET R/W = 0 --> WRITE
+      ba:	91 98       	cbi	0x12, 1	; 18
+
+	PORTD|=(1<<0); // SEND PULSE
+      bc:	90 9a       	sbi	0x12, 0	; 18
+      be:	8f e9       	ldi	r24, 0x9F	; 159
+      c0:	9f e0       	ldi	r25, 0x0F	; 15
+      c2:	01 97       	sbiw	r24, 0x01	; 1
+      c4:	f1 f7       	brne	.-4      	; 0xc2 <glcd_cmd+0x18>
+      c6:	00 c0       	rjmp	.+0      	; 0xc8 <glcd_cmd+0x1e>
+      c8:	00 00       	nop
+	_delay_ms(2);
+	PORTD&=~(1<<0);
+      ca:	90 98       	cbi	0x12, 0	; 18
+      cc:	08 95       	ret
+
+000000ce <glcd_data>:
+}
+
+void glcd_data(unsigned char dat)  //subroutine for data
+{
+	PORTC=dat;
+      ce:	85 bb       	out	0x15, r24	; 21
+      d0:	8f e9       	ldi	r24, 0x9F	; 159
+      d2:	9f e0       	ldi	r25, 0x0F	; 15
+      d4:	01 97       	sbiw	r24, 0x01	; 1
+      d6:	f1 f7       	brne	.-4      	; 0xd4 <glcd_data+0x6>
+      d8:	00 c0       	rjmp	.+0      	; 0xda <glcd_data+0xc>
+      da:	00 00       	nop
+	_delay_ms(2);
+	PORTD|=(1<<2); // SET RS = 1 --> DATA
+      dc:	92 9a       	sbi	0x12, 2	; 18
+	PORTD&=~(1<<1); // SET R/W = 0 --> WRITE
+      de:	91 98       	cbi	0x12, 1	; 18
+
+	PORTD|=(1<<0); // SET E = 1
+      e0:	90 9a       	sbi	0x12, 0	; 18
+      e2:	8f e9       	ldi	r24, 0x9F	; 159
+      e4:	9f e0       	ldi	r25, 0x0F	; 15
+      e6:	01 97       	sbiw	r24, 0x01	; 1
+      e8:	f1 f7       	brne	.-4      	; 0xe6 <glcd_data+0x18>
+      ea:	00 c0       	rjmp	.+0      	; 0xec <glcd_data+0x1e>
+      ec:	00 00       	nop
+	_delay_ms(2);
+	PORTD&=~(1<<0); // SET E = 0
+      ee:	90 98       	cbi	0x12, 0	; 18
+      f0:	08 95       	ret
+
+000000f2 <select_chip>:
+}
+
+void select_chip(int chip)    //Chip selection
+{	// CS1 --> PD4
+	// CS2 --> PD3
+	if(chip==2)
+      f2:	02 97       	sbiw	r24, 0x02	; 2
+      f4:	19 f4       	brne	.+6      	; 0xfc <select_chip+0xa>
+	{
+		PORTD|=(1<<4);
+      f6:	94 9a       	sbi	0x12, 4	; 18
+		PORTD&=~(1<<3);
+      f8:	93 98       	cbi	0x12, 3	; 18
+      fa:	08 95       	ret
+	}
+	else
+	{
+		PORTD&=~(1<<4);
+      fc:	94 98       	cbi	0x12, 4	; 18
+		PORTD|=(1<<3);
+      fe:	93 9a       	sbi	0x12, 3	; 18
+     100:	08 95       	ret
+
+00000102 <glcd_set>:
+	_delay_ms(2);
+	PORTD&=~(1<<0); // SET E = 0
+}
+
+void glcd_set()                //subroutine for initialaization
+{
+     102:	cf 93       	push	r28
+     104:	df 93       	push	r29
+     106:	00 d0       	rcall	.+0      	; 0x108 <glcd_set+0x6>
+     108:	1f 92       	push	r1
+     10a:	cd b7       	in	r28, 0x3d	; 61
+     10c:	de b7       	in	r29, 0x3e	; 62
+	unsigned char command[3]={0xb8,0x40,0x3f};
+     10e:	88 eb       	ldi	r24, 0xB8	; 184
+     110:	89 83       	std	Y+1, r24	; 0x01
+     112:	80 e4       	ldi	r24, 0x40	; 64
+     114:	8a 83       	std	Y+2, r24	; 0x02
+     116:	8f e3       	ldi	r24, 0x3F	; 63
+     118:	8b 83       	std	Y+3, r24	; 0x03
+	select_chip(2);                      //Chip selection
+     11a:	82 e0       	ldi	r24, 0x02	; 2
+     11c:	90 e0       	ldi	r25, 0x00	; 0
+     11e:	0e 94 79 00 	call	0xf2	; 0xf2 <select_chip>
+	for(i=0;i<3;i++)
+     122:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+     126:	80 e0       	ldi	r24, 0x00	; 0
+	glcd_cmd(command[i]);
+     128:	e1 e0       	ldi	r30, 0x01	; 1
+     12a:	f0 e0       	ldi	r31, 0x00	; 0
+     12c:	ec 0f       	add	r30, r28
+     12e:	fd 1f       	adc	r31, r29
+     130:	e8 0f       	add	r30, r24
+     132:	f1 1d       	adc	r31, r1
+     134:	80 81       	ld	r24, Z
+     136:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+
+void glcd_set()                //subroutine for initialaization
+{
+	unsigned char command[3]={0xb8,0x40,0x3f};
+	select_chip(2);                      //Chip selection
+	for(i=0;i<3;i++)
+     13a:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     13e:	8f 5f       	subi	r24, 0xFF	; 255
+     140:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     144:	83 30       	cpi	r24, 0x03	; 3
+     146:	80 f3       	brcs	.-32     	; 0x128 <glcd_set+0x26>
+	glcd_cmd(command[i]);
+	select_chip(1);
+     148:	81 e0       	ldi	r24, 0x01	; 1
+     14a:	90 e0       	ldi	r25, 0x00	; 0
+     14c:	0e 94 79 00 	call	0xf2	; 0xf2 <select_chip>
+	for(i=0;i<3;i++)
+     150:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+     154:	80 e0       	ldi	r24, 0x00	; 0
+	glcd_cmd(command[i]);
+     156:	e1 e0       	ldi	r30, 0x01	; 1
+     158:	f0 e0       	ldi	r31, 0x00	; 0
+     15a:	ec 0f       	add	r30, r28
+     15c:	fd 1f       	adc	r31, r29
+     15e:	e8 0f       	add	r30, r24
+     160:	f1 1d       	adc	r31, r1
+     162:	80 81       	ld	r24, Z
+     164:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	unsigned char command[3]={0xb8,0x40,0x3f};
+	select_chip(2);                      //Chip selection
+	for(i=0;i<3;i++)
+	glcd_cmd(command[i]);
+	select_chip(1);
+	for(i=0;i<3;i++)
+     168:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     16c:	8f 5f       	subi	r24, 0xFF	; 255
+     16e:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     172:	83 30       	cpi	r24, 0x03	; 3
+     174:	80 f3       	brcs	.-32     	; 0x156 <glcd_set+0x54>
+	glcd_cmd(command[i]);
+}
+     176:	0f 90       	pop	r0
+     178:	0f 90       	pop	r0
+     17a:	0f 90       	pop	r0
+     17c:	df 91       	pop	r29
+     17e:	cf 91       	pop	r28
+     180:	08 95       	ret
+
+00000182 <glcd_init>:
+     182:	8f e9       	ldi	r24, 0x9F	; 159
+     184:	9f e0       	ldi	r25, 0x0F	; 15
+     186:	01 97       	sbiw	r24, 0x01	; 1
+     188:	f1 f7       	brne	.-4      	; 0x186 <glcd_init+0x4>
+     18a:	00 c0       	rjmp	.+0      	; 0x18c <glcd_init+0xa>
+     18c:	00 00       	nop
+	}
+}
+
+void glcd_init(){
+	_delay_ms(2);
+	PORTD&=~(1<<5);
+     18e:	95 98       	cbi	0x12, 5	; 18
+     190:	8f e1       	ldi	r24, 0x1F	; 31
+     192:	9e e4       	ldi	r25, 0x4E	; 78
+     194:	01 97       	sbiw	r24, 0x01	; 1
+     196:	f1 f7       	brne	.-4      	; 0x194 <glcd_init+0x12>
+     198:	00 c0       	rjmp	.+0      	; 0x19a <glcd_init+0x18>
+     19a:	00 00       	nop
+	_delay_ms(10);
+	PORTD|=(1<<5);
+     19c:	95 9a       	sbi	0x12, 5	; 18
+     19e:	8f e9       	ldi	r24, 0x9F	; 159
+     1a0:	9f e0       	ldi	r25, 0x0F	; 15
+     1a2:	01 97       	sbiw	r24, 0x01	; 1
+     1a4:	f1 f7       	brne	.-4      	; 0x1a2 <glcd_init+0x20>
+     1a6:	00 c0       	rjmp	.+0      	; 0x1a8 <glcd_init+0x26>
+     1a8:	00 00       	nop
+	_delay_ms(2);
+
+	glcd_set();                    //initialization
+     1aa:	0e 94 81 00 	call	0x102	; 0x102 <glcd_set>
+     1ae:	8f ec       	ldi	r24, 0xCF	; 207
+     1b0:	97 e0       	ldi	r25, 0x07	; 7
+     1b2:	01 97       	sbiw	r24, 0x01	; 1
+     1b4:	f1 f7       	brne	.-4      	; 0x1b2 <glcd_init+0x30>
+     1b6:	00 c0       	rjmp	.+0      	; 0x1b8 <glcd_init+0x36>
+     1b8:	00 00       	nop
+	_delay_ms(1);
+	
+	
+	select_chip(2);
+     1ba:	82 e0       	ldi	r24, 0x02	; 2
+     1bc:	90 e0       	ldi	r25, 0x00	; 0
+     1be:	0e 94 79 00 	call	0xf2	; 0xf2 <select_chip>
+
+	glcd_cmd(0xb8);
+     1c2:	88 eb       	ldi	r24, 0xB8	; 184
+     1c4:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     1c8:	80 e4       	ldi	r24, 0x40	; 64
+     1ca:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for(i=0;i<64;i++){
+     1ce:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     1d2:	80 e0       	ldi	r24, 0x00	; 0
+     1d4:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+	
+	select_chip(2);
+
+	glcd_cmd(0xb8);
+	glcd_cmd(0x40);
+	for(i=0;i<64;i++){
+     1d8:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     1dc:	8f 5f       	subi	r24, 0xFF	; 255
+     1de:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     1e2:	80 34       	cpi	r24, 0x40	; 64
+     1e4:	b0 f3       	brcs	.-20     	; 0x1d2 <glcd_init+0x50>
+		glcd_data(0);
+	}
+
+	glcd_cmd(0xb8|1);
+     1e6:	89 eb       	ldi	r24, 0xB9	; 185
+     1e8:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     1ec:	80 e4       	ldi	r24, 0x40	; 64
+     1ee:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for (i=0;i<18;i++){
+     1f2:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     1f6:	80 e0       	ldi	r24, 0x00	; 0
+     1f8:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+
+	glcd_cmd(0xb8|1);
+	glcd_cmd(0x40);
+	for (i=0;i<18;i++){
+     1fc:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     200:	8f 5f       	subi	r24, 0xFF	; 255
+     202:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     206:	82 31       	cpi	r24, 0x12	; 18
+     208:	b0 f3       	brcs	.-20     	; 0x1f6 <glcd_init+0x74>
+		glcd_data(0);
+	}
+	for(i=0;i<27;i++){
+     20a:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+     20e:	e0 e0       	ldi	r30, 0x00	; 0
+		glcd_data(mine[i]);
+     210:	f0 e0       	ldi	r31, 0x00	; 0
+     212:	e9 5c       	subi	r30, 0xC9	; 201
+     214:	fd 4f       	sbci	r31, 0xFD	; 253
+     216:	80 81       	ld	r24, Z
+     218:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+	glcd_cmd(0xb8|1);
+	glcd_cmd(0x40);
+	for (i=0;i<18;i++){
+		glcd_data(0);
+	}
+	for(i=0;i<27;i++){
+     21c:	e0 91 d7 02 	lds	r30, 0x02D7	; 0x8002d7 <i>
+     220:	ef 5f       	subi	r30, 0xFF	; 255
+     222:	e0 93 d7 02 	sts	0x02D7, r30	; 0x8002d7 <i>
+     226:	eb 31       	cpi	r30, 0x1B	; 27
+     228:	98 f3       	brcs	.-26     	; 0x210 <glcd_init+0x8e>
+		glcd_data(mine[i]);
+	}
+	for (i=0;i<19;i++){
+     22a:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     22e:	80 e0       	ldi	r24, 0x00	; 0
+     230:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+	for(i=0;i<27;i++){
+		glcd_data(mine[i]);
+	}
+	for (i=0;i<19;i++){
+     234:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     238:	8f 5f       	subi	r24, 0xFF	; 255
+     23a:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     23e:	83 31       	cpi	r24, 0x13	; 19
+     240:	b0 f3       	brcs	.-20     	; 0x22e <glcd_init+0xac>
+		glcd_data(0);
+	}
+	
+	
+	glcd_cmd(0xb8|2);
+     242:	8a eb       	ldi	r24, 0xBA	; 186
+     244:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     248:	80 e4       	ldi	r24, 0x40	; 64
+     24a:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for (i=0;i<8;i++){
+     24e:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     252:	80 e0       	ldi	r24, 0x00	; 0
+     254:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+	}
+	
+	
+	glcd_cmd(0xb8|2);
+	glcd_cmd(0x40);
+	for (i=0;i<8;i++){
+     258:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     25c:	8f 5f       	subi	r24, 0xFF	; 255
+     25e:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     262:	88 30       	cpi	r24, 0x08	; 8
+     264:	b0 f3       	brcs	.-20     	; 0x252 <glcd_init+0xd0>
+		glcd_data(0);
+	}
+	for(i=0;i<48;i++){
+     266:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+     26a:	e0 e0       	ldi	r30, 0x00	; 0
+		glcd_data(sweeper[i]);
+     26c:	f0 e0       	ldi	r31, 0x00	; 0
+     26e:	e9 5f       	subi	r30, 0xF9	; 249
+     270:	fd 4f       	sbci	r31, 0xFD	; 253
+     272:	80 81       	ld	r24, Z
+     274:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+	glcd_cmd(0xb8|2);
+	glcd_cmd(0x40);
+	for (i=0;i<8;i++){
+		glcd_data(0);
+	}
+	for(i=0;i<48;i++){
+     278:	e0 91 d7 02 	lds	r30, 0x02D7	; 0x8002d7 <i>
+     27c:	ef 5f       	subi	r30, 0xFF	; 255
+     27e:	e0 93 d7 02 	sts	0x02D7, r30	; 0x8002d7 <i>
+     282:	e0 33       	cpi	r30, 0x30	; 48
+     284:	98 f3       	brcs	.-26     	; 0x26c <glcd_init+0xea>
+		glcd_data(sweeper[i]);
+	}
+	for (i=0;i<8;i++){
+     286:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     28a:	80 e0       	ldi	r24, 0x00	; 0
+     28c:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+	for(i=0;i<48;i++){
+		glcd_data(sweeper[i]);
+	}
+	for (i=0;i<8;i++){
+     290:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     294:	8f 5f       	subi	r24, 0xFF	; 255
+     296:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     29a:	88 30       	cpi	r24, 0x08	; 8
+     29c:	b0 f3       	brcs	.-20     	; 0x28a <glcd_init+0x108>
+		glcd_data(0);
+	}
+	
+	glcd_cmd(0xb8|3);
+     29e:	8b eb       	ldi	r24, 0xBB	; 187
+     2a0:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     2a4:	80 e4       	ldi	r24, 0x40	; 64
+     2a6:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for(i=0;i<64;i++){
+     2aa:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     2ae:	80 e0       	ldi	r24, 0x00	; 0
+     2b0:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+	
+	glcd_cmd(0xb8|3);
+	glcd_cmd(0x40);
+	for(i=0;i<64;i++){
+     2b4:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     2b8:	8f 5f       	subi	r24, 0xFF	; 255
+     2ba:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     2be:	80 34       	cpi	r24, 0x40	; 64
+     2c0:	b0 f3       	brcs	.-20     	; 0x2ae <glcd_init+0x12c>
+		glcd_data(0);
+	}
+	glcd_cmd(0xb8|4);
+     2c2:	8c eb       	ldi	r24, 0xBC	; 188
+     2c4:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     2c8:	80 e4       	ldi	r24, 0x40	; 64
+     2ca:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for(i=0;i<64;i++){
+     2ce:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     2d2:	80 e0       	ldi	r24, 0x00	; 0
+     2d4:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+	for(i=0;i<64;i++){
+		glcd_data(0);
+	}
+	glcd_cmd(0xb8|4);
+	glcd_cmd(0x40);
+	for(i=0;i<64;i++){
+     2d8:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     2dc:	8f 5f       	subi	r24, 0xFF	; 255
+     2de:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     2e2:	80 34       	cpi	r24, 0x40	; 64
+     2e4:	b0 f3       	brcs	.-20     	; 0x2d2 <glcd_init+0x150>
+		glcd_data(0);
+	}
+	
+	glcd_cmd(0xb8|6);
+     2e6:	8e eb       	ldi	r24, 0xBE	; 190
+     2e8:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     2ec:	80 e4       	ldi	r24, 0x40	; 64
+     2ee:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for(i=0;i<64;i++){
+     2f2:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     2f6:	80 e0       	ldi	r24, 0x00	; 0
+     2f8:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+	
+	glcd_cmd(0xb8|6);
+	glcd_cmd(0x40);
+	for(i=0;i<64;i++){
+     2fc:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     300:	8f 5f       	subi	r24, 0xFF	; 255
+     302:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     306:	80 34       	cpi	r24, 0x40	; 64
+     308:	b0 f3       	brcs	.-20     	; 0x2f6 <glcd_init+0x174>
+		glcd_data(0);
+	}
+	
+	glcd_cmd(0xb8|7);
+     30a:	8f eb       	ldi	r24, 0xBF	; 191
+     30c:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     310:	80 e4       	ldi	r24, 0x40	; 64
+     312:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for(i=0;i<64;i++){
+     316:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     31a:	80 e0       	ldi	r24, 0x00	; 0
+     31c:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+	
+	glcd_cmd(0xb8|7);
+	glcd_cmd(0x40);
+	for(i=0;i<64;i++){
+     320:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     324:	8f 5f       	subi	r24, 0xFF	; 255
+     326:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     32a:	80 34       	cpi	r24, 0x40	; 64
+     32c:	b0 f3       	brcs	.-20     	; 0x31a <glcd_init+0x198>
+		glcd_data(0);
+	}
+	
+	// glcd_game_restart();
+}
+     32e:	08 95       	ret
+
+00000330 <glcd_game_over>:
+		}
+	}
+}
+
+void glcd_game_over(){
+	select_chip(2);
+     330:	82 e0       	ldi	r24, 0x02	; 2
+     332:	90 e0       	ldi	r25, 0x00	; 0
+     334:	0e 94 79 00 	call	0xf2	; 0xf2 <select_chip>
+	glcd_cmd(0xb8|5);
+     338:	8d eb       	ldi	r24, 0xBD	; 189
+     33a:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     33e:	80 e4       	ldi	r24, 0x40	; 64
+     340:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for(i=0;i<4;i++){
+     344:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     348:	80 e0       	ldi	r24, 0x00	; 0
+     34a:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+
+void glcd_game_over(){
+	select_chip(2);
+	glcd_cmd(0xb8|5);
+	glcd_cmd(0x40);
+	for(i=0;i<4;i++){
+     34e:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     352:	8f 5f       	subi	r24, 0xFF	; 255
+     354:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     358:	84 30       	cpi	r24, 0x04	; 4
+     35a:	b0 f3       	brcs	.-20     	; 0x348 <glcd_game_over+0x18>
+		glcd_data(0);
+	}
+	for(i=0;i<55;i++){
+     35c:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+     360:	e0 e0       	ldi	r30, 0x00	; 0
+		glcd_data(gameover[i]);
+     362:	f0 e0       	ldi	r31, 0x00	; 0
+     364:	e0 53       	subi	r30, 0x30	; 48
+     366:	fe 4f       	sbci	r31, 0xFE	; 254
+     368:	80 81       	ld	r24, Z
+     36a:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+	glcd_cmd(0xb8|5);
+	glcd_cmd(0x40);
+	for(i=0;i<4;i++){
+		glcd_data(0);
+	}
+	for(i=0;i<55;i++){
+     36e:	e0 91 d7 02 	lds	r30, 0x02D7	; 0x8002d7 <i>
+     372:	ef 5f       	subi	r30, 0xFF	; 255
+     374:	e0 93 d7 02 	sts	0x02D7, r30	; 0x8002d7 <i>
+     378:	e7 33       	cpi	r30, 0x37	; 55
+     37a:	98 f3       	brcs	.-26     	; 0x362 <glcd_game_over+0x32>
+		glcd_data(gameover[i]);
+	}
+	for(i=0;i<5;i++){
+     37c:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     380:	80 e0       	ldi	r24, 0x00	; 0
+     382:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+	for(i=0;i<55;i++){
+		glcd_data(gameover[i]);
+	}
+	for(i=0;i<5;i++){
+     386:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     38a:	8f 5f       	subi	r24, 0xFF	; 255
+     38c:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     390:	85 30       	cpi	r24, 0x05	; 5
+     392:	b0 f3       	brcs	.-20     	; 0x380 <glcd_game_over+0x50>
+		glcd_data(0);
+	}
+}
+     394:	08 95       	ret
+
+00000396 <glcd_victory>:
+
+void glcd_victory(){
+	select_chip(2);
+     396:	82 e0       	ldi	r24, 0x02	; 2
+     398:	90 e0       	ldi	r25, 0x00	; 0
+     39a:	0e 94 79 00 	call	0xf2	; 0xf2 <select_chip>
+	glcd_cmd(0xb8|5);
+     39e:	8d eb       	ldi	r24, 0xBD	; 189
+     3a0:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40);
+     3a4:	80 e4       	ldi	r24, 0x40	; 64
+     3a6:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	for(i=0;i<8;i++){
+     3aa:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     3ae:	80 e0       	ldi	r24, 0x00	; 0
+     3b0:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+
+void glcd_victory(){
+	select_chip(2);
+	glcd_cmd(0xb8|5);
+	glcd_cmd(0x40);
+	for(i=0;i<8;i++){
+     3b4:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     3b8:	8f 5f       	subi	r24, 0xFF	; 255
+     3ba:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     3be:	88 30       	cpi	r24, 0x08	; 8
+     3c0:	b0 f3       	brcs	.-20     	; 0x3ae <glcd_victory+0x18>
+		glcd_data(0);
+	}
+	for(i=0;i<48;i++){
+     3c2:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+     3c6:	e0 e0       	ldi	r30, 0x00	; 0
+		glcd_data(victory[i]);
+     3c8:	f0 e0       	ldi	r31, 0x00	; 0
+     3ca:	e0 56       	subi	r30, 0x60	; 96
+     3cc:	fe 4f       	sbci	r31, 0xFE	; 254
+     3ce:	80 81       	ld	r24, Z
+     3d0:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+	glcd_cmd(0xb8|5);
+	glcd_cmd(0x40);
+	for(i=0;i<8;i++){
+		glcd_data(0);
+	}
+	for(i=0;i<48;i++){
+     3d4:	e0 91 d7 02 	lds	r30, 0x02D7	; 0x8002d7 <i>
+     3d8:	ef 5f       	subi	r30, 0xFF	; 255
+     3da:	e0 93 d7 02 	sts	0x02D7, r30	; 0x8002d7 <i>
+     3de:	e0 33       	cpi	r30, 0x30	; 48
+     3e0:	98 f3       	brcs	.-26     	; 0x3c8 <glcd_victory+0x32>
+		glcd_data(victory[i]);
+	}
+	for(i=0;i<8;i++){
+     3e2:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+		glcd_data(0);
+     3e6:	80 e0       	ldi	r24, 0x00	; 0
+     3e8:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		glcd_data(0);
+	}
+	for(i=0;i<48;i++){
+		glcd_data(victory[i]);
+	}
+	for(i=0;i<8;i++){
+     3ec:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     3f0:	8f 5f       	subi	r24, 0xFF	; 255
+     3f2:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     3f6:	88 30       	cpi	r24, 0x08	; 8
+     3f8:	b0 f3       	brcs	.-20     	; 0x3e6 <glcd_victory+0x50>
+		glcd_data(0);
+	}
+}
+     3fa:	08 95       	ret
+
+000003fc <set_block>:
+
+void set_block(unsigned char x,unsigned char y,unsigned char shape,unsigned char is_cursor){
+     3fc:	ef 92       	push	r14
+     3fe:	ff 92       	push	r15
+     400:	0f 93       	push	r16
+     402:	1f 93       	push	r17
+     404:	cf 93       	push	r28
+     406:	df 93       	push	r29
+     408:	cd b7       	in	r28, 0x3d	; 61
+     40a:	de b7       	in	r29, 0x3e	; 62
+     40c:	28 97       	sbiw	r28, 0x08	; 8
+     40e:	0f b6       	in	r0, 0x3f	; 63
+     410:	f8 94       	cli
+     412:	de bf       	out	0x3e, r29	; 62
+     414:	0f be       	out	0x3f, r0	; 63
+     416:	cd bf       	out	0x3d, r28	; 61
+     418:	e8 2e       	mov	r14, r24
+     41a:	06 2f       	mov	r16, r22
+     41c:	14 2f       	mov	r17, r20
+     41e:	f2 2e       	mov	r15, r18
+	y=y*8;
+	select_chip(1);
+     420:	81 e0       	ldi	r24, 0x01	; 1
+     422:	90 e0       	ldi	r25, 0x00	; 0
+     424:	0e 94 79 00 	call	0xf2	; 0xf2 <select_chip>
+	glcd_cmd(0xb8|x);
+     428:	8e 2d       	mov	r24, r14
+     42a:	88 6b       	ori	r24, 0xB8	; 184
+     42c:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	glcd_cmd(0x40|y);
+     430:	80 2f       	mov	r24, r16
+     432:	88 0f       	add	r24, r24
+     434:	88 0f       	add	r24, r24
+     436:	88 0f       	add	r24, r24
+     438:	80 64       	ori	r24, 0x40	; 64
+     43a:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+	unsigned char out[8];
+	if(!is_cursor){
+     43e:	f1 10       	cpse	r15, r1
+     440:	0c c0       	rjmp	.+24     	; 0x45a <__LOCK_REGION_LENGTH__+0x5a>
+     442:	fe 01       	movw	r30, r28
+     444:	31 96       	adiw	r30, 0x01	; 1
+     446:	ce 01       	movw	r24, r28
+     448:	09 96       	adiw	r24, 0x09	; 9
+		for(i=0;i<8;i++){
+			out[i]=0;
+     44a:	11 92       	st	Z+, r1
+	select_chip(1);
+	glcd_cmd(0xb8|x);
+	glcd_cmd(0x40|y);
+	unsigned char out[8];
+	if(!is_cursor){
+		for(i=0;i<8;i++){
+     44c:	e8 17       	cp	r30, r24
+     44e:	f9 07       	cpc	r31, r25
+     450:	e1 f7       	brne	.-8      	; 0x44a <__LOCK_REGION_LENGTH__+0x4a>
+     452:	88 e0       	ldi	r24, 0x08	; 8
+     454:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     458:	0d c0       	rjmp	.+26     	; 0x474 <__LOCK_REGION_LENGTH__+0x74>
+			out[i]=0;
+		}
+	}
+	else{
+		out[0]=255;
+     45a:	8f ef       	ldi	r24, 0xFF	; 255
+     45c:	89 83       	std	Y+1, r24	; 0x01
+		out[7]=255;
+     45e:	88 87       	std	Y+8, r24	; 0x08
+		for(i=1;i<7;i++){
+			out[i]=129;
+     460:	81 e8       	ldi	r24, 0x81	; 129
+     462:	8a 83       	std	Y+2, r24	; 0x02
+     464:	8b 83       	std	Y+3, r24	; 0x03
+     466:	8c 83       	std	Y+4, r24	; 0x04
+     468:	8d 83       	std	Y+5, r24	; 0x05
+     46a:	8e 83       	std	Y+6, r24	; 0x06
+     46c:	8f 83       	std	Y+7, r24	; 0x07
+     46e:	87 e0       	ldi	r24, 0x07	; 7
+     470:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+		}
+	}
+	
+	switch(shape){
+     474:	41 2f       	mov	r20, r17
+     476:	50 e0       	ldi	r21, 0x00	; 0
+     478:	fa 01       	movw	r30, r20
+     47a:	31 97       	sbiw	r30, 0x01	; 1
+     47c:	ec 30       	cpi	r30, 0x0C	; 12
+     47e:	f1 05       	cpc	r31, r1
+     480:	08 f0       	brcs	.+2      	; 0x484 <__LOCK_REGION_LENGTH__+0x84>
+     482:	7b c0       	rjmp	.+246    	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     484:	e6 5d       	subi	r30, 0xD6	; 214
+     486:	ff 4f       	sbci	r31, 0xFF	; 255
+     488:	0c 94 4e 08 	jmp	0x109c	; 0x109c <__tablejump2__>
+     48c:	aa e7       	ldi	r26, 0x7A	; 122
+     48e:	b2 e0       	ldi	r27, 0x02	; 2
+     490:	fe 01       	movw	r30, r28
+     492:	31 96       	adiw	r30, 0x01	; 1
+     494:	9e 01       	movw	r18, r28
+     496:	27 5f       	subi	r18, 0xF7	; 247
+     498:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=0;
+		}
+		break;
+		case 1:
+		for(i=0;i<8;i++){
+			out[i]|=one[i];
+     49a:	8d 91       	ld	r24, X+
+     49c:	90 81       	ld	r25, Z
+     49e:	89 2b       	or	r24, r25
+     4a0:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=0;
+		}
+		break;
+		case 1:
+		for(i=0;i<8;i++){
+     4a2:	2e 17       	cp	r18, r30
+     4a4:	3f 07       	cpc	r19, r31
+     4a6:	c9 f7       	brne	.-14     	; 0x49a <__LOCK_REGION_LENGTH__+0x9a>
+     4a8:	68 c0       	rjmp	.+208    	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     4aa:	a2 e7       	ldi	r26, 0x72	; 114
+     4ac:	b2 e0       	ldi	r27, 0x02	; 2
+     4ae:	fe 01       	movw	r30, r28
+     4b0:	31 96       	adiw	r30, 0x01	; 1
+     4b2:	9e 01       	movw	r18, r28
+     4b4:	27 5f       	subi	r18, 0xF7	; 247
+     4b6:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=one[i];
+		}
+		break;
+		case 2:
+		for(i=0;i<8;i++){
+			out[i]|=two[i];
+     4b8:	8d 91       	ld	r24, X+
+     4ba:	90 81       	ld	r25, Z
+     4bc:	89 2b       	or	r24, r25
+     4be:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=one[i];
+		}
+		break;
+		case 2:
+		for(i=0;i<8;i++){
+     4c0:	2e 17       	cp	r18, r30
+     4c2:	3f 07       	cpc	r19, r31
+     4c4:	c9 f7       	brne	.-14     	; 0x4b8 <__LOCK_REGION_LENGTH__+0xb8>
+     4c6:	59 c0       	rjmp	.+178    	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     4c8:	aa e6       	ldi	r26, 0x6A	; 106
+     4ca:	b2 e0       	ldi	r27, 0x02	; 2
+     4cc:	fe 01       	movw	r30, r28
+     4ce:	31 96       	adiw	r30, 0x01	; 1
+     4d0:	9e 01       	movw	r18, r28
+     4d2:	27 5f       	subi	r18, 0xF7	; 247
+     4d4:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=two[i];
+		}
+		break;
+		case 3:
+		for(i=0;i<8;i++){
+			out[i]|=three[i];
+     4d6:	8d 91       	ld	r24, X+
+     4d8:	90 81       	ld	r25, Z
+     4da:	89 2b       	or	r24, r25
+     4dc:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=two[i];
+		}
+		break;
+		case 3:
+		for(i=0;i<8;i++){
+     4de:	e2 17       	cp	r30, r18
+     4e0:	f3 07       	cpc	r31, r19
+     4e2:	c9 f7       	brne	.-14     	; 0x4d6 <__LOCK_REGION_LENGTH__+0xd6>
+     4e4:	4a c0       	rjmp	.+148    	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     4e6:	a2 e6       	ldi	r26, 0x62	; 98
+     4e8:	b2 e0       	ldi	r27, 0x02	; 2
+     4ea:	fe 01       	movw	r30, r28
+     4ec:	31 96       	adiw	r30, 0x01	; 1
+     4ee:	9e 01       	movw	r18, r28
+     4f0:	27 5f       	subi	r18, 0xF7	; 247
+     4f2:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=three[i];
+		}
+		break;
+		case 4:
+		for(i=0;i<8;i++){
+			out[i]|=four[i];
+     4f4:	8d 91       	ld	r24, X+
+     4f6:	90 81       	ld	r25, Z
+     4f8:	89 2b       	or	r24, r25
+     4fa:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=three[i];
+		}
+		break;
+		case 4:
+		for(i=0;i<8;i++){
+     4fc:	e2 17       	cp	r30, r18
+     4fe:	f3 07       	cpc	r31, r19
+     500:	c9 f7       	brne	.-14     	; 0x4f4 <__LOCK_REGION_LENGTH__+0xf4>
+     502:	3b c0       	rjmp	.+118    	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     504:	aa e5       	ldi	r26, 0x5A	; 90
+     506:	b2 e0       	ldi	r27, 0x02	; 2
+     508:	fe 01       	movw	r30, r28
+     50a:	31 96       	adiw	r30, 0x01	; 1
+     50c:	9e 01       	movw	r18, r28
+     50e:	27 5f       	subi	r18, 0xF7	; 247
+     510:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=four[i];
+		}
+		break;
+		case 5:
+		for(i=0;i<8;i++){
+			out[i]|=five[i];
+     512:	8d 91       	ld	r24, X+
+     514:	90 81       	ld	r25, Z
+     516:	89 2b       	or	r24, r25
+     518:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=four[i];
+		}
+		break;
+		case 5:
+		for(i=0;i<8;i++){
+     51a:	e2 17       	cp	r30, r18
+     51c:	f3 07       	cpc	r31, r19
+     51e:	c9 f7       	brne	.-14     	; 0x512 <__LOCK_REGION_LENGTH__+0x112>
+     520:	2c c0       	rjmp	.+88     	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     522:	aa e8       	ldi	r26, 0x8A	; 138
+     524:	b2 e0       	ldi	r27, 0x02	; 2
+     526:	fe 01       	movw	r30, r28
+     528:	31 96       	adiw	r30, 0x01	; 1
+     52a:	9e 01       	movw	r18, r28
+     52c:	27 5f       	subi	r18, 0xF7	; 247
+     52e:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=five[i];
+		}
+		break;
+		case 10:
+		for(i=0;i<8;i++){
+			out[i]|=bomb[i];
+     530:	8d 91       	ld	r24, X+
+     532:	90 81       	ld	r25, Z
+     534:	89 2b       	or	r24, r25
+     536:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=five[i];
+		}
+		break;
+		case 10:
+		for(i=0;i<8;i++){
+     538:	e2 17       	cp	r30, r18
+     53a:	f3 07       	cpc	r31, r19
+     53c:	c9 f7       	brne	.-14     	; 0x530 <__LOCK_REGION_LENGTH__+0x130>
+     53e:	1d c0       	rjmp	.+58     	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     540:	a2 e8       	ldi	r26, 0x82	; 130
+     542:	b2 e0       	ldi	r27, 0x02	; 2
+     544:	fe 01       	movw	r30, r28
+     546:	31 96       	adiw	r30, 0x01	; 1
+     548:	9e 01       	movw	r18, r28
+     54a:	27 5f       	subi	r18, 0xF7	; 247
+     54c:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=bomb[i];
+		}
+		break;
+		case 11:
+		for(i=0;i<8;i++){
+			out[i]|=flag[i];
+     54e:	8d 91       	ld	r24, X+
+     550:	90 81       	ld	r25, Z
+     552:	89 2b       	or	r24, r25
+     554:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=bomb[i];
+		}
+		break;
+		case 11:
+		for(i=0;i<8;i++){
+     556:	e2 17       	cp	r30, r18
+     558:	f3 07       	cpc	r31, r19
+     55a:	c9 f7       	brne	.-14     	; 0x54e <__LOCK_REGION_LENGTH__+0x14e>
+     55c:	0e c0       	rjmp	.+28     	; 0x57a <__LOCK_REGION_LENGTH__+0x17a>
+     55e:	a2 e5       	ldi	r26, 0x52	; 82
+     560:	b2 e0       	ldi	r27, 0x02	; 2
+     562:	fe 01       	movw	r30, r28
+     564:	31 96       	adiw	r30, 0x01	; 1
+     566:	9e 01       	movw	r18, r28
+     568:	27 5f       	subi	r18, 0xF7	; 247
+     56a:	3f 4f       	sbci	r19, 0xFF	; 255
+			out[i]|=flag[i];
+		}
+		break;
+		case 12:
+		for(i=0;i<8;i++){
+			out[i]|=block[i];
+     56c:	8d 91       	ld	r24, X+
+     56e:	90 81       	ld	r25, Z
+     570:	89 2b       	or	r24, r25
+     572:	81 93       	st	Z+, r24
+		for(i=0;i<8;i++){
+			out[i]|=flag[i];
+		}
+		break;
+		case 12:
+		for(i=0;i<8;i++){
+     574:	e2 17       	cp	r30, r18
+     576:	f3 07       	cpc	r31, r19
+     578:	c9 f7       	brne	.-14     	; 0x56c <__LOCK_REGION_LENGTH__+0x16c>
+			out[i]|=block[i];
+		}
+		break;
+	}
+	for(i=0;i<8;i++){
+     57a:	10 92 d7 02 	sts	0x02D7, r1	; 0x8002d7 <i>
+     57e:	80 e0       	ldi	r24, 0x00	; 0
+		glcd_data(out[i]);
+     580:	e1 e0       	ldi	r30, 0x01	; 1
+     582:	f0 e0       	ldi	r31, 0x00	; 0
+     584:	ec 0f       	add	r30, r28
+     586:	fd 1f       	adc	r31, r29
+     588:	e8 0f       	add	r30, r24
+     58a:	f1 1d       	adc	r31, r1
+     58c:	80 81       	ld	r24, Z
+     58e:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+		for(i=0;i<8;i++){
+			out[i]|=block[i];
+		}
+		break;
+	}
+	for(i=0;i<8;i++){
+     592:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     596:	8f 5f       	subi	r24, 0xFF	; 255
+     598:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     59c:	88 30       	cpi	r24, 0x08	; 8
+     59e:	80 f3       	brcs	.-32     	; 0x580 <__LOCK_REGION_LENGTH__+0x180>
+		glcd_data(out[i]);
+	}
+}
+     5a0:	28 96       	adiw	r28, 0x08	; 8
+     5a2:	0f b6       	in	r0, 0x3f	; 63
+     5a4:	f8 94       	cli
+     5a6:	de bf       	out	0x3e, r29	; 62
+     5a8:	0f be       	out	0x3f, r0	; 63
+     5aa:	cd bf       	out	0x3d, r28	; 61
+     5ac:	df 91       	pop	r29
+     5ae:	cf 91       	pop	r28
+     5b0:	1f 91       	pop	r17
+     5b2:	0f 91       	pop	r16
+     5b4:	ff 90       	pop	r15
+     5b6:	ef 90       	pop	r14
+     5b8:	08 95       	ret
+
+000005ba <glcd_game_restart>:
+	}
+	
+	// glcd_game_restart();
+}
+
+void glcd_game_restart(){
+     5ba:	cf 93       	push	r28
+     5bc:	df 93       	push	r29
+	l_x=0;
+     5be:	10 92 96 02 	sts	0x0296, r1	; 0x800296 <l_x>
+	l_y=0;
+     5c2:	10 92 d8 02 	sts	0x02D8, r1	; 0x8002d8 <l_y>
+	l_shape=12;
+     5c6:	8c e0       	ldi	r24, 0x0C	; 12
+     5c8:	80 93 d9 02 	sts	0x02D9, r24	; 0x8002d9 <l_shape>
+	select_chip(2);
+     5cc:	82 e0       	ldi	r24, 0x02	; 2
+     5ce:	90 e0       	ldi	r25, 0x00	; 0
+     5d0:	0e 94 79 00 	call	0xf2	; 0xf2 <select_chip>
+	
+	for(i=5;i<6;i++){
+     5d4:	85 e0       	ldi	r24, 0x05	; 5
+     5d6:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+		glcd_cmd(0xb8|i);
+     5da:	88 6b       	ori	r24, 0xB8	; 184
+     5dc:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+		glcd_cmd(0x40);
+     5e0:	80 e4       	ldi	r24, 0x40	; 64
+     5e2:	0e 94 55 00 	call	0xaa	; 0xaa <glcd_cmd>
+     5e6:	c0 e4       	ldi	r28, 0x40	; 64
+     5e8:	d0 e0       	ldi	r29, 0x00	; 0
+		for(int j=0;j<64;j++){
+			glcd_data(0);
+     5ea:	80 e0       	ldi	r24, 0x00	; 0
+     5ec:	0e 94 67 00 	call	0xce	; 0xce <glcd_data>
+     5f0:	21 97       	sbiw	r28, 0x01	; 1
+	select_chip(2);
+	
+	for(i=5;i<6;i++){
+		glcd_cmd(0xb8|i);
+		glcd_cmd(0x40);
+		for(int j=0;j<64;j++){
+     5f2:	d9 f7       	brne	.-10     	; 0x5ea <glcd_game_restart+0x30>
+	l_x=0;
+	l_y=0;
+	l_shape=12;
+	select_chip(2);
+	
+	for(i=5;i<6;i++){
+     5f4:	80 91 d7 02 	lds	r24, 0x02D7	; 0x8002d7 <i>
+     5f8:	8f 5f       	subi	r24, 0xFF	; 255
+     5fa:	80 93 d7 02 	sts	0x02D7, r24	; 0x8002d7 <i>
+     5fe:	86 30       	cpi	r24, 0x06	; 6
+     600:	60 f3       	brcs	.-40     	; 0x5da <glcd_game_restart+0x20>
+     602:	d0 e0       	ldi	r29, 0x00	; 0
+     604:	0c c0       	rjmp	.+24     	; 0x61e <glcd_game_restart+0x64>
+		}
+	}
+	
+	for(unsigned char w=0;w<8;w++){
+		for(unsigned char z=0;z<8;z++){
+			set_block(w,z,12,0);
+     606:	20 e0       	ldi	r18, 0x00	; 0
+     608:	4c e0       	ldi	r20, 0x0C	; 12
+     60a:	6c 2f       	mov	r22, r28
+     60c:	8d 2f       	mov	r24, r29
+     60e:	0e 94 fe 01 	call	0x3fc	; 0x3fc <set_block>
+			glcd_data(0);
+		}
+	}
+	
+	for(unsigned char w=0;w<8;w++){
+		for(unsigned char z=0;z<8;z++){
+     612:	cf 5f       	subi	r28, 0xFF	; 255
+     614:	c8 30       	cpi	r28, 0x08	; 8
+     616:	b9 f7       	brne	.-18     	; 0x606 <glcd_game_restart+0x4c>
+		for(int j=0;j<64;j++){
+			glcd_data(0);
+		}
+	}
+	
+	for(unsigned char w=0;w<8;w++){
+     618:	df 5f       	subi	r29, 0xFF	; 255
+     61a:	d8 30       	cpi	r29, 0x08	; 8
+     61c:	11 f0       	breq	.+4      	; 0x622 <glcd_game_restart+0x68>
+	l_shape=12;
+	select_chip(2);
+	
+	for(i=5;i<6;i++){
+		glcd_cmd(0xb8|i);
+		glcd_cmd(0x40);
+     61e:	c0 e0       	ldi	r28, 0x00	; 0
+     620:	f2 cf       	rjmp	.-28     	; 0x606 <glcd_game_restart+0x4c>
+	for(unsigned char w=0;w<8;w++){
+		for(unsigned char z=0;z<8;z++){
+			set_block(w,z,12,0);
+		}
+	}
+}
+     622:	df 91       	pop	r29
+     624:	cf 91       	pop	r28
+     626:	08 95       	ret
+
+00000628 <set_display>:
+	for(i=0;i<8;i++){
+		glcd_data(out[i]);
+	}
+}
+
+void set_display(unsigned char x,unsigned char y,unsigned char shape,unsigned char is_cursor){
+     628:	1f 93       	push	r17
+     62a:	cf 93       	push	r28
+     62c:	df 93       	push	r29
+     62e:	18 2f       	mov	r17, r24
+     630:	d6 2f       	mov	r29, r22
+     632:	c4 2f       	mov	r28, r20
+	if(!is_cursor){
+     634:	21 11       	cpse	r18, r1
+     636:	03 c0       	rjmp	.+6      	; 0x63e <set_display+0x16>
+		set_block(x,y,shape,is_cursor);
+     638:	0e 94 fe 01 	call	0x3fc	; 0x3fc <set_block>
+     63c:	15 c0       	rjmp	.+42     	; 0x668 <set_display+0x40>
+	}
+	else{
+		set_block(l_x,l_y,l_shape,0);
+     63e:	20 e0       	ldi	r18, 0x00	; 0
+     640:	40 91 d9 02 	lds	r20, 0x02D9	; 0x8002d9 <l_shape>
+     644:	60 91 d8 02 	lds	r22, 0x02D8	; 0x8002d8 <l_y>
+     648:	80 91 96 02 	lds	r24, 0x0296	; 0x800296 <l_x>
+     64c:	0e 94 fe 01 	call	0x3fc	; 0x3fc <set_block>
+		set_block(x,y,shape,1);
+     650:	21 e0       	ldi	r18, 0x01	; 1
+     652:	4c 2f       	mov	r20, r28
+     654:	6d 2f       	mov	r22, r29
+     656:	81 2f       	mov	r24, r17
+     658:	0e 94 fe 01 	call	0x3fc	; 0x3fc <set_block>
+		l_x=x;
+     65c:	10 93 96 02 	sts	0x0296, r17	; 0x800296 <l_x>
+		l_y=y;
+     660:	d0 93 d8 02 	sts	0x02D8, r29	; 0x8002d8 <l_y>
+		l_shape=shape;
+     664:	c0 93 d9 02 	sts	0x02D9, r28	; 0x8002d9 <l_shape>
+	}
+}
+     668:	df 91       	pop	r29
+     66a:	cf 91       	pop	r28
+     66c:	1f 91       	pop	r17
+     66e:	08 95       	ret
+
+00000670 <game_initialization>:
+
+unsigned char x=0, y=0, status[8][8], game[8][8], level=0, count=0;
+
+void game_initialization()
+{
+	x = 0;
+     670:	10 92 95 02 	sts	0x0295, r1	; 0x800295 <x>
+	y = 0;
+     674:	10 92 94 02 	sts	0x0294, r1	; 0x800294 <y>
+	count = 0;
+     678:	10 92 92 02 	sts	0x0292, r1	; 0x800292 <__data_end>
+     67c:	ea ed       	ldi	r30, 0xDA	; 218
+     67e:	f2 e0       	ldi	r31, 0x02	; 2
+     680:	4a e1       	ldi	r20, 0x1A	; 26
+     682:	53 e0       	ldi	r21, 0x03	; 3
+	
+	for(unsigned char i =0; i<8; i+=1)
+	for(unsigned char j =0; j<8; j+=1)
+	status[i][j] = 12;
+     684:	2c e0       	ldi	r18, 0x0C	; 12
+     686:	08 c0       	rjmp	.+16     	; 0x698 <game_initialization+0x28>
+     688:	21 93       	st	Z+, r18
+	x = 0;
+	y = 0;
+	count = 0;
+	
+	for(unsigned char i =0; i<8; i+=1)
+	for(unsigned char j =0; j<8; j+=1)
+     68a:	e8 17       	cp	r30, r24
+     68c:	f9 07       	cpc	r31, r25
+     68e:	e1 f7       	brne	.-8      	; 0x688 <game_initialization+0x18>
+     690:	fc 01       	movw	r30, r24
+{
+	x = 0;
+	y = 0;
+	count = 0;
+	
+	for(unsigned char i =0; i<8; i+=1)
+     692:	48 17       	cp	r20, r24
+     694:	59 07       	cpc	r21, r25
+     696:	19 f0       	breq	.+6      	; 0x69e <game_initialization+0x2e>
+     698:	cf 01       	movw	r24, r30
+     69a:	08 96       	adiw	r24, 0x08	; 8
+     69c:	f5 cf       	rjmp	.-22     	; 0x688 <game_initialization+0x18>
+	for(unsigned char j =0; j<8; j+=1)
+	status[i][j] = 12;
+	
+	
+	switch (level)
+     69e:	80 91 93 02 	lds	r24, 0x0293	; 0x800293 <level>
+     6a2:	82 30       	cpi	r24, 0x02	; 2
+     6a4:	c9 f0       	breq	.+50     	; 0x6d8 <game_initialization+0x68>
+     6a6:	28 f4       	brcc	.+10     	; 0x6b2 <game_initialization+0x42>
+     6a8:	88 23       	and	r24, r24
+     6aa:	21 f1       	breq	.+72     	; 0x6f4 <game_initialization+0x84>
+     6ac:	81 30       	cpi	r24, 0x01	; 1
+     6ae:	d9 f0       	breq	.+54     	; 0x6e6 <game_initialization+0x76>
+     6b0:	79 c0       	rjmp	.+242    	; 0x7a4 <game_initialization+0x134>
+     6b2:	83 30       	cpi	r24, 0x03	; 3
+     6b4:	51 f0       	breq	.+20     	; 0x6ca <game_initialization+0x5a>
+     6b6:	84 30       	cpi	r24, 0x04	; 4
+     6b8:	09 f0       	breq	.+2      	; 0x6bc <game_initialization+0x4c>
+     6ba:	74 c0       	rjmp	.+232    	; 0x7a4 <game_initialization+0x134>
+     6bc:	e0 e6       	ldi	r30, 0x60	; 96
+     6be:	f0 e0       	ldi	r31, 0x00	; 0
+     6c0:	47 e9       	ldi	r20, 0x97	; 151
+     6c2:	52 e0       	ldi	r21, 0x02	; 2
+     6c4:	67 ed       	ldi	r22, 0xD7	; 215
+     6c6:	72 e0       	ldi	r23, 0x02	; 2
+     6c8:	68 c0       	rjmp	.+208    	; 0x79a <game_initialization+0x12a>
+     6ca:	e0 ea       	ldi	r30, 0xA0	; 160
+     6cc:	f0 e0       	ldi	r31, 0x00	; 0
+     6ce:	47 e9       	ldi	r20, 0x97	; 151
+     6d0:	52 e0       	ldi	r21, 0x02	; 2
+     6d2:	67 ed       	ldi	r22, 0xD7	; 215
+     6d4:	72 e0       	ldi	r23, 0x02	; 2
+     6d6:	51 c0       	rjmp	.+162    	; 0x77a <game_initialization+0x10a>
+     6d8:	e0 ee       	ldi	r30, 0xE0	; 224
+     6da:	f0 e0       	ldi	r31, 0x00	; 0
+     6dc:	47 e9       	ldi	r20, 0x97	; 151
+     6de:	52 e0       	ldi	r21, 0x02	; 2
+     6e0:	67 ed       	ldi	r22, 0xD7	; 215
+     6e2:	72 e0       	ldi	r23, 0x02	; 2
+     6e4:	3a c0       	rjmp	.+116    	; 0x75a <game_initialization+0xea>
+     6e6:	e0 e2       	ldi	r30, 0x20	; 32
+     6e8:	f1 e0       	ldi	r31, 0x01	; 1
+     6ea:	47 e9       	ldi	r20, 0x97	; 151
+     6ec:	52 e0       	ldi	r21, 0x02	; 2
+     6ee:	67 ed       	ldi	r22, 0xD7	; 215
+     6f0:	72 e0       	ldi	r23, 0x02	; 2
+     6f2:	23 c0       	rjmp	.+70     	; 0x73a <game_initialization+0xca>
+     6f4:	e0 e6       	ldi	r30, 0x60	; 96
+     6f6:	f1 e0       	ldi	r31, 0x01	; 1
+     6f8:	47 e9       	ldi	r20, 0x97	; 151
+     6fa:	52 e0       	ldi	r21, 0x02	; 2
+     6fc:	67 ed       	ldi	r22, 0xD7	; 215
+     6fe:	72 e0       	ldi	r23, 0x02	; 2
+     700:	0c c0       	rjmp	.+24     	; 0x71a <game_initialization+0xaa>
+	{
+		case 0:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table1[i][j];
+     702:	81 91       	ld	r24, Z+
+     704:	8d 93       	st	X+, r24
+	
+	switch (level)
+	{
+		case 0:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+     706:	e2 17       	cp	r30, r18
+     708:	f3 07       	cpc	r31, r19
+     70a:	d9 f7       	brne	.-10     	; 0x702 <game_initialization+0x92>
+     70c:	48 5f       	subi	r20, 0xF8	; 248
+     70e:	5f 4f       	sbci	r21, 0xFF	; 255
+     710:	f9 01       	movw	r30, r18
+	
+	
+	switch (level)
+	{
+		case 0:
+		for(unsigned char i =0; i<8; i+=1)
+     712:	64 17       	cp	r22, r20
+     714:	75 07       	cpc	r23, r21
+     716:	09 f4       	brne	.+2      	; 0x71a <game_initialization+0xaa>
+     718:	45 c0       	rjmp	.+138    	; 0x7a4 <game_initialization+0x134>
+     71a:	9f 01       	movw	r18, r30
+     71c:	28 5f       	subi	r18, 0xF8	; 248
+     71e:	3f 4f       	sbci	r19, 0xFF	; 255
+10,1,0,1,10,2,3,10};
+
+unsigned char x=0, y=0, status[8][8], game[8][8], level=0, count=0;
+
+void game_initialization()
+{
+     720:	da 01       	movw	r26, r20
+     722:	ef cf       	rjmp	.-34     	; 0x702 <game_initialization+0x92>
+		game[i][j] = table1[i][j];
+		break;
+		case 1:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table2[i][j];
+     724:	81 91       	ld	r24, Z+
+     726:	8d 93       	st	X+, r24
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table1[i][j];
+		break;
+		case 1:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+     728:	2e 17       	cp	r18, r30
+     72a:	3f 07       	cpc	r19, r31
+     72c:	d9 f7       	brne	.-10     	; 0x724 <game_initialization+0xb4>
+     72e:	48 5f       	subi	r20, 0xF8	; 248
+     730:	5f 4f       	sbci	r21, 0xFF	; 255
+     732:	f9 01       	movw	r30, r18
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table1[i][j];
+		break;
+		case 1:
+		for(unsigned char i =0; i<8; i+=1)
+     734:	64 17       	cp	r22, r20
+     736:	75 07       	cpc	r23, r21
+     738:	a9 f1       	breq	.+106    	; 0x7a4 <game_initialization+0x134>
+     73a:	9f 01       	movw	r18, r30
+     73c:	28 5f       	subi	r18, 0xF8	; 248
+     73e:	3f 4f       	sbci	r19, 0xFF	; 255
+10,1,0,1,10,2,3,10};
+
+unsigned char x=0, y=0, status[8][8], game[8][8], level=0, count=0;
+
+void game_initialization()
+{
+     740:	da 01       	movw	r26, r20
+     742:	f0 cf       	rjmp	.-32     	; 0x724 <game_initialization+0xb4>
+		game[i][j] = table2[i][j];
+		break;
+		case 2:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table3[i][j];
+     744:	81 91       	ld	r24, Z+
+     746:	8d 93       	st	X+, r24
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table2[i][j];
+		break;
+		case 2:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+     748:	2e 17       	cp	r18, r30
+     74a:	3f 07       	cpc	r19, r31
+     74c:	d9 f7       	brne	.-10     	; 0x744 <game_initialization+0xd4>
+     74e:	48 5f       	subi	r20, 0xF8	; 248
+     750:	5f 4f       	sbci	r21, 0xFF	; 255
+     752:	f9 01       	movw	r30, r18
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table2[i][j];
+		break;
+		case 2:
+		for(unsigned char i =0; i<8; i+=1)
+     754:	64 17       	cp	r22, r20
+     756:	75 07       	cpc	r23, r21
+     758:	29 f1       	breq	.+74     	; 0x7a4 <game_initialization+0x134>
+     75a:	9f 01       	movw	r18, r30
+     75c:	28 5f       	subi	r18, 0xF8	; 248
+     75e:	3f 4f       	sbci	r19, 0xFF	; 255
+10,1,0,1,10,2,3,10};
+
+unsigned char x=0, y=0, status[8][8], game[8][8], level=0, count=0;
+
+void game_initialization()
+{
+     760:	da 01       	movw	r26, r20
+     762:	f0 cf       	rjmp	.-32     	; 0x744 <game_initialization+0xd4>
+		game[i][j] = table3[i][j];
+		break;
+		case 3:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table4[i][j];
+     764:	81 91       	ld	r24, Z+
+     766:	8d 93       	st	X+, r24
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table3[i][j];
+		break;
+		case 3:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+     768:	e2 17       	cp	r30, r18
+     76a:	f3 07       	cpc	r31, r19
+     76c:	d9 f7       	brne	.-10     	; 0x764 <game_initialization+0xf4>
+     76e:	48 5f       	subi	r20, 0xF8	; 248
+     770:	5f 4f       	sbci	r21, 0xFF	; 255
+     772:	f9 01       	movw	r30, r18
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table3[i][j];
+		break;
+		case 3:
+		for(unsigned char i =0; i<8; i+=1)
+     774:	46 17       	cp	r20, r22
+     776:	57 07       	cpc	r21, r23
+     778:	a9 f0       	breq	.+42     	; 0x7a4 <game_initialization+0x134>
+     77a:	9f 01       	movw	r18, r30
+     77c:	28 5f       	subi	r18, 0xF8	; 248
+     77e:	3f 4f       	sbci	r19, 0xFF	; 255
+10,1,0,1,10,2,3,10};
+
+unsigned char x=0, y=0, status[8][8], game[8][8], level=0, count=0;
+
+void game_initialization()
+{
+     780:	da 01       	movw	r26, r20
+     782:	f0 cf       	rjmp	.-32     	; 0x764 <game_initialization+0xf4>
+		game[i][j] = table4[i][j];
+		break;
+		case 4:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table5[i][j];
+     784:	81 91       	ld	r24, Z+
+     786:	8d 93       	st	X+, r24
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table4[i][j];
+		break;
+		case 4:
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+     788:	e2 17       	cp	r30, r18
+     78a:	f3 07       	cpc	r31, r19
+     78c:	d9 f7       	brne	.-10     	; 0x784 <game_initialization+0x114>
+     78e:	48 5f       	subi	r20, 0xF8	; 248
+     790:	5f 4f       	sbci	r21, 0xFF	; 255
+     792:	f9 01       	movw	r30, r18
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table4[i][j];
+		break;
+		case 4:
+		for(unsigned char i =0; i<8; i+=1)
+     794:	46 17       	cp	r20, r22
+     796:	57 07       	cpc	r21, r23
+     798:	29 f0       	breq	.+10     	; 0x7a4 <game_initialization+0x134>
+     79a:	9f 01       	movw	r18, r30
+     79c:	28 5f       	subi	r18, 0xF8	; 248
+     79e:	3f 4f       	sbci	r19, 0xFF	; 255
+10,1,0,1,10,2,3,10};
+
+unsigned char x=0, y=0, status[8][8], game[8][8], level=0, count=0;
+
+void game_initialization()
+{
+     7a0:	da 01       	movw	r26, r20
+     7a2:	f0 cf       	rjmp	.-32     	; 0x784 <game_initialization+0x114>
+		for(unsigned char i =0; i<8; i+=1)
+		for(unsigned char j =0; j<8; j+=1)
+		game[i][j] = table5[i][j];
+		break;
+	}
+	glcd_game_restart();
+     7a4:	0e 94 dd 02 	call	0x5ba	; 0x5ba <glcd_game_restart>
+	set_display(x,y,status[x][y],1);
+     7a8:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     7ac:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     7b0:	e8 2f       	mov	r30, r24
+     7b2:	f0 e0       	ldi	r31, 0x00	; 0
+     7b4:	ee 0f       	add	r30, r30
+     7b6:	ff 1f       	adc	r31, r31
+     7b8:	ee 0f       	add	r30, r30
+     7ba:	ff 1f       	adc	r31, r31
+     7bc:	ee 0f       	add	r30, r30
+     7be:	ff 1f       	adc	r31, r31
+     7c0:	e6 52       	subi	r30, 0x26	; 38
+     7c2:	fd 4f       	sbci	r31, 0xFD	; 253
+     7c4:	e6 0f       	add	r30, r22
+     7c6:	f1 1d       	adc	r31, r1
+     7c8:	21 e0       	ldi	r18, 0x01	; 1
+     7ca:	40 81       	ld	r20, Z
+     7cc:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+     7d0:	08 95       	ret
+
+000007d2 <main>:
+}
+
+
+int main(void)
+{
+     7d2:	cf 93       	push	r28
+     7d4:	df 93       	push	r29
+     7d6:	00 d0       	rcall	.+0      	; 0x7d8 <main+0x6>
+     7d8:	1f 92       	push	r1
+     7da:	cd b7       	in	r28, 0x3d	; 61
+     7dc:	de b7       	in	r29, 0x3e	; 62
+	DDRC=DDRD=0xff;
+     7de:	8f ef       	ldi	r24, 0xFF	; 255
+     7e0:	81 bb       	out	0x11, r24	; 17
+     7e2:	84 bb       	out	0x14, r24	; 20
+	DDRB = 0;
+     7e4:	17 ba       	out	0x17, r1	; 23
+	glcd_init();
+     7e6:	0e 94 c1 00 	call	0x182	; 0x182 <glcd_init>
+	level = 0;
+     7ea:	10 92 93 02 	sts	0x0293, r1	; 0x800293 <level>
+	game_initialization();
+     7ee:	0e 94 38 03 	call	0x670	; 0x670 <game_initialization>
+					//_delay_ms(10);
+				}
+			}
+			else if( temp == 10) // lose
+			{
+				status[x][y] = temp;
+     7f2:	0f 2e       	mov	r0, r31
+     7f4:	fa e0       	ldi	r31, 0x0A	; 10
+     7f6:	2f 2e       	mov	r2, r31
+     7f8:	f0 2d       	mov	r31, r0
+				for(unsigned char i =0; i<8; i+=1)
+				for(unsigned char j =0; j<8; j+=1)
+				{
+					if( game[i][j] == 10 && status[i][j] == 12)
+					{
+						status[i][j] = game[i][j];
+     7fa:	2a 82       	std	Y+2, r2	; 0x02
+			if( game[x][y] == 10)
+			count++;
+		}
+		else if(status[x][y] == 11)
+		{
+			status[x][y] = 12;
+     7fc:	0f 2e       	mov	r0, r31
+     7fe:	fc e0       	ldi	r31, 0x0C	; 12
+     800:	4f 2e       	mov	r4, r31
+     802:	f0 2d       	mov	r31, r0
+	}
+	if (PINB & (1<<5)) // flag
+	{
+		if(status[x][y] == 12)
+		{
+			status[x][y] = 11;
+     804:	0f 2e       	mov	r0, r31
+     806:	fb e0       	ldi	r31, 0x0B	; 11
+     808:	6f 2e       	mov	r6, r31
+     80a:	f0 2d       	mov	r31, r0
+				for(unsigned char i =0; i<8; i+=1)
+				for(unsigned char j =0; j<8; j+=1)
+				{
+					if( game[i][j] == 10 && status[i][j] == 12)
+					{
+						status[i][j] = game[i][j];
+     80c:	29 82       	std	Y+1, r2	; 0x01
+			if( game[x][y] == 10)
+			count++;
+		}
+		else if(status[x][y] == 11)
+		{
+			status[x][y] = 12;
+     80e:	34 2c       	mov	r3, r4
+	}
+	if (PINB & (1<<5)) // flag
+	{
+		if(status[x][y] == 12)
+		{
+			status[x][y] = 11;
+     810:	56 2c       	mov	r5, r6
+		_delay_ms(20);
+	}
+	if(count == 64)  // win
+	{
+		glcd_victory();
+		level = (level+1) % 5;
+     812:	0f 2e       	mov	r0, r31
+     814:	f5 e0       	ldi	r31, 0x05	; 5
+     816:	af 2e       	mov	r10, r31
+     818:	b1 2c       	mov	r11, r1
+     81a:	f0 2d       	mov	r31, r0
+	glcd_init();
+	level = 0;
+	game_initialization();
+	while (1)
+	{
+		if (PINB & (1<<3)) // left
+     81c:	b3 9b       	sbis	0x16, 3	; 22
+     81e:	25 c0       	rjmp	.+74     	; 0x86a <__stack+0xb>
+		{
+			if ( y == 0)
+     820:	80 91 94 02 	lds	r24, 0x0294	; 0x800294 <y>
+     824:	81 11       	cpse	r24, r1
+     826:	04 c0       	rjmp	.+8      	; 0x830 <main+0x5e>
+			y = 7;
+     828:	27 e0       	ldi	r18, 0x07	; 7
+     82a:	20 93 94 02 	sts	0x0294, r18	; 0x800294 <y>
+     82e:	03 c0       	rjmp	.+6      	; 0x836 <main+0x64>
+			else
+			y = y-1;
+     830:	81 50       	subi	r24, 0x01	; 1
+     832:	80 93 94 02 	sts	0x0294, r24	; 0x800294 <y>
+			set_display(x,y,status[x][y],1);
+     836:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     83a:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     83e:	e8 2f       	mov	r30, r24
+     840:	f0 e0       	ldi	r31, 0x00	; 0
+     842:	ee 0f       	add	r30, r30
+     844:	ff 1f       	adc	r31, r31
+     846:	ee 0f       	add	r30, r30
+     848:	ff 1f       	adc	r31, r31
+     84a:	ee 0f       	add	r30, r30
+     84c:	ff 1f       	adc	r31, r31
+     84e:	e6 52       	subi	r30, 0x26	; 38
+     850:	fd 4f       	sbci	r31, 0xFD	; 253
+     852:	e6 0f       	add	r30, r22
+     854:	f1 1d       	adc	r31, r1
+     856:	21 e0       	ldi	r18, 0x01	; 1
+     858:	40 81       	ld	r20, Z
+     85a:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+     85e:	8f e3       	ldi	r24, 0x3F	; 63
+     860:	9c e9       	ldi	r25, 0x9C	; 156
+     862:	01 97       	sbiw	r24, 0x01	; 1
+     864:	f1 f7       	brne	.-4      	; 0x862 <__stack+0x3>
+     866:	00 c0       	rjmp	.+0      	; 0x868 <__stack+0x9>
+     868:	00 00       	nop
+			_delay_ms(20);
+		}
+		if (PINB & (1<<1)) // right
+     86a:	b1 9b       	sbis	0x16, 1	; 22
+     86c:	29 c0       	rjmp	.+82     	; 0x8c0 <__stack+0x61>
+		{
+			y = (y+1)%8;
+     86e:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     872:	70 e0       	ldi	r23, 0x00	; 0
+     874:	6f 5f       	subi	r22, 0xFF	; 255
+     876:	7f 4f       	sbci	r23, 0xFF	; 255
+     878:	67 70       	andi	r22, 0x07	; 7
+     87a:	70 78       	andi	r23, 0x80	; 128
+     87c:	77 23       	and	r23, r23
+     87e:	34 f4       	brge	.+12     	; 0x88c <__stack+0x2d>
+     880:	61 50       	subi	r22, 0x01	; 1
+     882:	71 09       	sbc	r23, r1
+     884:	68 6f       	ori	r22, 0xF8	; 248
+     886:	7f 6f       	ori	r23, 0xFF	; 255
+     888:	6f 5f       	subi	r22, 0xFF	; 255
+     88a:	7f 4f       	sbci	r23, 0xFF	; 255
+     88c:	60 93 94 02 	sts	0x0294, r22	; 0x800294 <y>
+			set_display(x,y,status[x][y],1);
+     890:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     894:	e8 2f       	mov	r30, r24
+     896:	f0 e0       	ldi	r31, 0x00	; 0
+     898:	ee 0f       	add	r30, r30
+     89a:	ff 1f       	adc	r31, r31
+     89c:	ee 0f       	add	r30, r30
+     89e:	ff 1f       	adc	r31, r31
+     8a0:	ee 0f       	add	r30, r30
+     8a2:	ff 1f       	adc	r31, r31
+     8a4:	e6 52       	subi	r30, 0x26	; 38
+     8a6:	fd 4f       	sbci	r31, 0xFD	; 253
+     8a8:	e6 0f       	add	r30, r22
+     8aa:	f1 1d       	adc	r31, r1
+     8ac:	21 e0       	ldi	r18, 0x01	; 1
+     8ae:	40 81       	ld	r20, Z
+     8b0:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+     8b4:	ef e3       	ldi	r30, 0x3F	; 63
+     8b6:	fc e9       	ldi	r31, 0x9C	; 156
+     8b8:	31 97       	sbiw	r30, 0x01	; 1
+     8ba:	f1 f7       	brne	.-4      	; 0x8b8 <__stack+0x59>
+     8bc:	00 c0       	rjmp	.+0      	; 0x8be <__stack+0x5f>
+     8be:	00 00       	nop
+			_delay_ms(20);
+		}
+		if (PINB & (1<<2)) // down
+     8c0:	b2 9b       	sbis	0x16, 2	; 22
+     8c2:	29 c0       	rjmp	.+82     	; 0x916 <__stack+0xb7>
+		{
+			x = (x+1)%8;
+     8c4:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     8c8:	90 e0       	ldi	r25, 0x00	; 0
+     8ca:	01 96       	adiw	r24, 0x01	; 1
+     8cc:	87 70       	andi	r24, 0x07	; 7
+     8ce:	90 78       	andi	r25, 0x80	; 128
+     8d0:	99 23       	and	r25, r25
+     8d2:	24 f4       	brge	.+8      	; 0x8dc <__stack+0x7d>
+     8d4:	01 97       	sbiw	r24, 0x01	; 1
+     8d6:	88 6f       	ori	r24, 0xF8	; 248
+     8d8:	9f 6f       	ori	r25, 0xFF	; 255
+     8da:	01 96       	adiw	r24, 0x01	; 1
+     8dc:	80 93 95 02 	sts	0x0295, r24	; 0x800295 <x>
+			set_display(x,y,status[x][y],1);
+     8e0:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     8e4:	fc 01       	movw	r30, r24
+     8e6:	ff 27       	eor	r31, r31
+     8e8:	ee 0f       	add	r30, r30
+     8ea:	ff 1f       	adc	r31, r31
+     8ec:	ee 0f       	add	r30, r30
+     8ee:	ff 1f       	adc	r31, r31
+     8f0:	ee 0f       	add	r30, r30
+     8f2:	ff 1f       	adc	r31, r31
+     8f4:	e6 52       	subi	r30, 0x26	; 38
+     8f6:	fd 4f       	sbci	r31, 0xFD	; 253
+     8f8:	e6 0f       	add	r30, r22
+     8fa:	f1 1d       	adc	r31, r1
+     8fc:	21 e0       	ldi	r18, 0x01	; 1
+     8fe:	40 81       	ld	r20, Z
+     900:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+     904:	ff ef       	ldi	r31, 0xFF	; 255
+     906:	21 ee       	ldi	r18, 0xE1	; 225
+     908:	84 e0       	ldi	r24, 0x04	; 4
+     90a:	f1 50       	subi	r31, 0x01	; 1
+     90c:	20 40       	sbci	r18, 0x00	; 0
+     90e:	80 40       	sbci	r24, 0x00	; 0
+     910:	e1 f7       	brne	.-8      	; 0x90a <__stack+0xab>
+     912:	00 c0       	rjmp	.+0      	; 0x914 <__stack+0xb5>
+     914:	00 00       	nop
+			_delay_ms(200);
+		}
+		if (PINB & (1)) // up
+     916:	b0 9b       	sbis	0x16, 0	; 22
+     918:	25 c0       	rjmp	.+74     	; 0x964 <__stack+0x105>
+		{
+			if ( x == 0)
+     91a:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     91e:	81 11       	cpse	r24, r1
+     920:	04 c0       	rjmp	.+8      	; 0x92a <__stack+0xcb>
+			x = 7;
+     922:	97 e0       	ldi	r25, 0x07	; 7
+     924:	90 93 95 02 	sts	0x0295, r25	; 0x800295 <x>
+     928:	03 c0       	rjmp	.+6      	; 0x930 <__stack+0xd1>
+			else
+			x = x-1;
+     92a:	81 50       	subi	r24, 0x01	; 1
+     92c:	80 93 95 02 	sts	0x0295, r24	; 0x800295 <x>
+			set_display(x,y,status[x][y],1);
+     930:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     934:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     938:	e8 2f       	mov	r30, r24
+     93a:	f0 e0       	ldi	r31, 0x00	; 0
+     93c:	ee 0f       	add	r30, r30
+     93e:	ff 1f       	adc	r31, r31
+     940:	ee 0f       	add	r30, r30
+     942:	ff 1f       	adc	r31, r31
+     944:	ee 0f       	add	r30, r30
+     946:	ff 1f       	adc	r31, r31
+     948:	e6 52       	subi	r30, 0x26	; 38
+     94a:	fd 4f       	sbci	r31, 0xFD	; 253
+     94c:	e6 0f       	add	r30, r22
+     94e:	f1 1d       	adc	r31, r1
+     950:	21 e0       	ldi	r18, 0x01	; 1
+     952:	40 81       	ld	r20, Z
+     954:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+     958:	ef e3       	ldi	r30, 0x3F	; 63
+     95a:	fc e9       	ldi	r31, 0x9C	; 156
+     95c:	31 97       	sbiw	r30, 0x01	; 1
+     95e:	f1 f7       	brne	.-4      	; 0x95c <__stack+0xfd>
+     960:	00 c0       	rjmp	.+0      	; 0x962 <__stack+0x103>
+     962:	00 00       	nop
+			_delay_ms(20);
+		}
+		if (PINB & (1<<4)) // select
+     964:	b4 9b       	sbis	0x16, 4	; 22
+     966:	a6 c2       	rjmp	.+1356   	; 0xeb4 <__stack+0x655>
+		{
+		if(status[x][y] == 12)
+     968:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     96c:	28 2f       	mov	r18, r24
+     96e:	30 e0       	ldi	r19, 0x00	; 0
+     970:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     974:	a6 2f       	mov	r26, r22
+     976:	b0 e0       	ldi	r27, 0x00	; 0
+     978:	f9 01       	movw	r30, r18
+     97a:	ee 0f       	add	r30, r30
+     97c:	ff 1f       	adc	r31, r31
+     97e:	ee 0f       	add	r30, r30
+     980:	ff 1f       	adc	r31, r31
+     982:	ee 0f       	add	r30, r30
+     984:	ff 1f       	adc	r31, r31
+     986:	e6 52       	subi	r30, 0x26	; 38
+     988:	fd 4f       	sbci	r31, 0xFD	; 253
+     98a:	ea 0f       	add	r30, r26
+     98c:	fb 1f       	adc	r31, r27
+     98e:	90 81       	ld	r25, Z
+     990:	9c 30       	cpi	r25, 0x0C	; 12
+     992:	09 f0       	breq	.+2      	; 0x996 <__stack+0x137>
+     994:	89 c2       	rjmp	.+1298   	; 0xea8 <__stack+0x649>
+		{
+			unsigned char temp = game[x][y];
+     996:	f9 01       	movw	r30, r18
+     998:	ee 0f       	add	r30, r30
+     99a:	ff 1f       	adc	r31, r31
+     99c:	ee 0f       	add	r30, r30
+     99e:	ff 1f       	adc	r31, r31
+     9a0:	ee 0f       	add	r30, r30
+     9a2:	ff 1f       	adc	r31, r31
+     9a4:	e9 56       	subi	r30, 0x69	; 105
+     9a6:	fd 4f       	sbci	r31, 0xFD	; 253
+     9a8:	ea 0f       	add	r30, r26
+     9aa:	fb 1f       	adc	r31, r27
+     9ac:	40 81       	ld	r20, Z
+			if(temp > 0 && temp < 9)// number
+     9ae:	9f ef       	ldi	r25, 0xFF	; 255
+     9b0:	94 0f       	add	r25, r20
+     9b2:	98 30       	cpi	r25, 0x08	; 8
+     9b4:	a0 f4       	brcc	.+40     	; 0x9de <__stack+0x17f>
+			{
+				status[x][y] = temp;
+     9b6:	22 0f       	add	r18, r18
+     9b8:	33 1f       	adc	r19, r19
+     9ba:	22 0f       	add	r18, r18
+     9bc:	33 1f       	adc	r19, r19
+     9be:	22 0f       	add	r18, r18
+     9c0:	33 1f       	adc	r19, r19
+     9c2:	26 52       	subi	r18, 0x26	; 38
+     9c4:	3d 4f       	sbci	r19, 0xFD	; 253
+     9c6:	a2 0f       	add	r26, r18
+     9c8:	b3 1f       	adc	r27, r19
+     9ca:	4c 93       	st	X, r20
+				set_display(x,y,status[x][y],1);
+     9cc:	21 e0       	ldi	r18, 0x01	; 1
+     9ce:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+				count++;
+     9d2:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     9d6:	8f 5f       	subi	r24, 0xFF	; 255
+     9d8:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+     9dc:	65 c2       	rjmp	.+1226   	; 0xea8 <__stack+0x649>
+			}
+			else if( temp == 0) // empty
+     9de:	41 11       	cpse	r20, r1
+     9e0:	11 c2       	rjmp	.+1058   	; 0xe04 <__stack+0x5a5>
+			{
+				status[x][y] = temp;
+     9e2:	22 0f       	add	r18, r18
+     9e4:	33 1f       	adc	r19, r19
+     9e6:	22 0f       	add	r18, r18
+     9e8:	33 1f       	adc	r19, r19
+     9ea:	22 0f       	add	r18, r18
+     9ec:	33 1f       	adc	r19, r19
+     9ee:	26 52       	subi	r18, 0x26	; 38
+     9f0:	3d 4f       	sbci	r19, 0xFD	; 253
+     9f2:	a2 0f       	add	r26, r18
+     9f4:	b3 1f       	adc	r27, r19
+     9f6:	1c 92       	st	X, r1
+				count++;
+     9f8:	90 91 92 02 	lds	r25, 0x0292	; 0x800292 <__data_end>
+     9fc:	9f 5f       	subi	r25, 0xFF	; 255
+     9fe:	90 93 92 02 	sts	0x0292, r25	; 0x800292 <__data_end>
+				set_display(x,y,status[x][y],1);
+     a02:	21 e0       	ldi	r18, 0x01	; 1
+     a04:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+				if(x > 0 && game[x-1][y] != 10 && status[x-1][y] == 12) // x-1
+     a08:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     a0c:	88 23       	and	r24, r24
+     a0e:	71 f1       	breq	.+92     	; 0xa6c <__stack+0x20d>
+     a10:	28 2f       	mov	r18, r24
+     a12:	30 e0       	ldi	r19, 0x00	; 0
+     a14:	21 50       	subi	r18, 0x01	; 1
+     a16:	31 09       	sbc	r19, r1
+     a18:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     a1c:	a6 2f       	mov	r26, r22
+     a1e:	b0 e0       	ldi	r27, 0x00	; 0
+     a20:	f9 01       	movw	r30, r18
+     a22:	ee 0f       	add	r30, r30
+     a24:	ff 1f       	adc	r31, r31
+     a26:	ee 0f       	add	r30, r30
+     a28:	ff 1f       	adc	r31, r31
+     a2a:	ee 0f       	add	r30, r30
+     a2c:	ff 1f       	adc	r31, r31
+     a2e:	e9 56       	subi	r30, 0x69	; 105
+     a30:	fd 4f       	sbci	r31, 0xFD	; 253
+     a32:	ea 0f       	add	r30, r26
+     a34:	fb 1f       	adc	r31, r27
+     a36:	40 81       	ld	r20, Z
+     a38:	4a 30       	cpi	r20, 0x0A	; 10
+     a3a:	c1 f0       	breq	.+48     	; 0xa6c <__stack+0x20d>
+     a3c:	f9 01       	movw	r30, r18
+     a3e:	ee 0f       	add	r30, r30
+     a40:	ff 1f       	adc	r31, r31
+     a42:	ee 0f       	add	r30, r30
+     a44:	ff 1f       	adc	r31, r31
+     a46:	ee 0f       	add	r30, r30
+     a48:	ff 1f       	adc	r31, r31
+     a4a:	e6 52       	subi	r30, 0x26	; 38
+     a4c:	fd 4f       	sbci	r31, 0xFD	; 253
+     a4e:	ea 0f       	add	r30, r26
+     a50:	fb 1f       	adc	r31, r27
+     a52:	90 81       	ld	r25, Z
+     a54:	9c 30       	cpi	r25, 0x0C	; 12
+     a56:	51 f4       	brne	.+20     	; 0xa6c <__stack+0x20d>
+				{
+					status[x-1][y] = game[x-1][y];
+     a58:	40 83       	st	Z, r20
+					set_display(x-1,y,status[x-1][y],0);
+     a5a:	20 e0       	ldi	r18, 0x00	; 0
+     a5c:	81 50       	subi	r24, 0x01	; 1
+     a5e:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     a62:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     a66:	8f 5f       	subi	r24, 0xFF	; 255
+     a68:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+					//_delay_ms(10);
+				}
+				if(y > 0 && game[x][y-1] != 10 && status[x][y-1] == 12) // y-1
+     a6c:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+     a70:	99 23       	and	r25, r25
+     a72:	09 f4       	brne	.+2      	; 0xa76 <__stack+0x217>
+     a74:	a7 c2       	rjmp	.+1358   	; 0xfc4 <__stack+0x765>
+     a76:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     a7a:	68 2f       	mov	r22, r24
+     a7c:	70 e0       	ldi	r23, 0x00	; 0
+     a7e:	29 2f       	mov	r18, r25
+     a80:	30 e0       	ldi	r19, 0x00	; 0
+     a82:	21 50       	subi	r18, 0x01	; 1
+     a84:	31 09       	sbc	r19, r1
+     a86:	fb 01       	movw	r30, r22
+     a88:	ee 0f       	add	r30, r30
+     a8a:	ff 1f       	adc	r31, r31
+     a8c:	ee 0f       	add	r30, r30
+     a8e:	ff 1f       	adc	r31, r31
+     a90:	ee 0f       	add	r30, r30
+     a92:	ff 1f       	adc	r31, r31
+     a94:	e9 56       	subi	r30, 0x69	; 105
+     a96:	fd 4f       	sbci	r31, 0xFD	; 253
+     a98:	e2 0f       	add	r30, r18
+     a9a:	f3 1f       	adc	r31, r19
+     a9c:	40 81       	ld	r20, Z
+     a9e:	4a 30       	cpi	r20, 0x0A	; 10
+     aa0:	21 f1       	breq	.+72     	; 0xaea <__stack+0x28b>
+     aa2:	fb 01       	movw	r30, r22
+     aa4:	ee 0f       	add	r30, r30
+     aa6:	ff 1f       	adc	r31, r31
+     aa8:	ee 0f       	add	r30, r30
+     aaa:	ff 1f       	adc	r31, r31
+     aac:	ee 0f       	add	r30, r30
+     aae:	ff 1f       	adc	r31, r31
+     ab0:	e6 52       	subi	r30, 0x26	; 38
+     ab2:	fd 4f       	sbci	r31, 0xFD	; 253
+     ab4:	e2 0f       	add	r30, r18
+     ab6:	f3 1f       	adc	r31, r19
+     ab8:	50 81       	ld	r21, Z
+     aba:	5c 30       	cpi	r21, 0x0C	; 12
+     abc:	b1 f4       	brne	.+44     	; 0xaea <__stack+0x28b>
+				{
+					status[x][y-1] = game[x][y-1];
+     abe:	66 0f       	add	r22, r22
+     ac0:	77 1f       	adc	r23, r23
+     ac2:	66 0f       	add	r22, r22
+     ac4:	77 1f       	adc	r23, r23
+     ac6:	66 0f       	add	r22, r22
+     ac8:	77 1f       	adc	r23, r23
+     aca:	66 52       	subi	r22, 0x26	; 38
+     acc:	7d 4f       	sbci	r23, 0xFD	; 253
+     ace:	fb 01       	movw	r30, r22
+     ad0:	e2 0f       	add	r30, r18
+     ad2:	f3 1f       	adc	r31, r19
+     ad4:	40 83       	st	Z, r20
+					set_display(x,y-1,status[x][y-1],0);
+     ad6:	6f ef       	ldi	r22, 0xFF	; 255
+     ad8:	69 0f       	add	r22, r25
+     ada:	20 e0       	ldi	r18, 0x00	; 0
+     adc:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     ae0:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     ae4:	8f 5f       	subi	r24, 0xFF	; 255
+     ae6:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+					//_delay_ms(10);
+				}
+				if(x < 7 && game[x+1][y] != 10 && status[x+1][y] == 12) // x+1
+     aea:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     aee:	87 30       	cpi	r24, 0x07	; 7
+     af0:	70 f5       	brcc	.+92     	; 0xb4e <__stack+0x2ef>
+     af2:	28 2f       	mov	r18, r24
+     af4:	30 e0       	ldi	r19, 0x00	; 0
+     af6:	2f 5f       	subi	r18, 0xFF	; 255
+     af8:	3f 4f       	sbci	r19, 0xFF	; 255
+     afa:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     afe:	a6 2f       	mov	r26, r22
+     b00:	b0 e0       	ldi	r27, 0x00	; 0
+     b02:	f9 01       	movw	r30, r18
+     b04:	ee 0f       	add	r30, r30
+     b06:	ff 1f       	adc	r31, r31
+     b08:	ee 0f       	add	r30, r30
+     b0a:	ff 1f       	adc	r31, r31
+     b0c:	ee 0f       	add	r30, r30
+     b0e:	ff 1f       	adc	r31, r31
+     b10:	e9 56       	subi	r30, 0x69	; 105
+     b12:	fd 4f       	sbci	r31, 0xFD	; 253
+     b14:	ea 0f       	add	r30, r26
+     b16:	fb 1f       	adc	r31, r27
+     b18:	40 81       	ld	r20, Z
+     b1a:	4a 30       	cpi	r20, 0x0A	; 10
+     b1c:	c1 f0       	breq	.+48     	; 0xb4e <__stack+0x2ef>
+     b1e:	f9 01       	movw	r30, r18
+     b20:	ee 0f       	add	r30, r30
+     b22:	ff 1f       	adc	r31, r31
+     b24:	ee 0f       	add	r30, r30
+     b26:	ff 1f       	adc	r31, r31
+     b28:	ee 0f       	add	r30, r30
+     b2a:	ff 1f       	adc	r31, r31
+     b2c:	e6 52       	subi	r30, 0x26	; 38
+     b2e:	fd 4f       	sbci	r31, 0xFD	; 253
+     b30:	ea 0f       	add	r30, r26
+     b32:	fb 1f       	adc	r31, r27
+     b34:	90 81       	ld	r25, Z
+     b36:	9c 30       	cpi	r25, 0x0C	; 12
+     b38:	51 f4       	brne	.+20     	; 0xb4e <__stack+0x2ef>
+				{
+					status[x+1][y] = game[x+1][y];
+     b3a:	40 83       	st	Z, r20
+					set_display(x+1,y,status[x+1][y],0);
+     b3c:	20 e0       	ldi	r18, 0x00	; 0
+     b3e:	8f 5f       	subi	r24, 0xFF	; 255
+     b40:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     b44:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     b48:	8f 5f       	subi	r24, 0xFF	; 255
+     b4a:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+					//_delay_ms(10);
+				}
+				if(y < 7 && game[x][y+1] != 10 && status[x][y+1] == 12) // y+1
+     b4e:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+     b52:	97 30       	cpi	r25, 0x07	; 7
+     b54:	d0 f5       	brcc	.+116    	; 0xbca <__stack+0x36b>
+     b56:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     b5a:	68 2f       	mov	r22, r24
+     b5c:	70 e0       	ldi	r23, 0x00	; 0
+     b5e:	29 2f       	mov	r18, r25
+     b60:	30 e0       	ldi	r19, 0x00	; 0
+     b62:	2f 5f       	subi	r18, 0xFF	; 255
+     b64:	3f 4f       	sbci	r19, 0xFF	; 255
+     b66:	fb 01       	movw	r30, r22
+     b68:	ee 0f       	add	r30, r30
+     b6a:	ff 1f       	adc	r31, r31
+     b6c:	ee 0f       	add	r30, r30
+     b6e:	ff 1f       	adc	r31, r31
+     b70:	ee 0f       	add	r30, r30
+     b72:	ff 1f       	adc	r31, r31
+     b74:	e9 56       	subi	r30, 0x69	; 105
+     b76:	fd 4f       	sbci	r31, 0xFD	; 253
+     b78:	e2 0f       	add	r30, r18
+     b7a:	f3 1f       	adc	r31, r19
+     b7c:	40 81       	ld	r20, Z
+     b7e:	4a 30       	cpi	r20, 0x0A	; 10
+     b80:	21 f1       	breq	.+72     	; 0xbca <__stack+0x36b>
+     b82:	fb 01       	movw	r30, r22
+     b84:	ee 0f       	add	r30, r30
+     b86:	ff 1f       	adc	r31, r31
+     b88:	ee 0f       	add	r30, r30
+     b8a:	ff 1f       	adc	r31, r31
+     b8c:	ee 0f       	add	r30, r30
+     b8e:	ff 1f       	adc	r31, r31
+     b90:	e6 52       	subi	r30, 0x26	; 38
+     b92:	fd 4f       	sbci	r31, 0xFD	; 253
+     b94:	e2 0f       	add	r30, r18
+     b96:	f3 1f       	adc	r31, r19
+     b98:	50 81       	ld	r21, Z
+     b9a:	5c 30       	cpi	r21, 0x0C	; 12
+     b9c:	b1 f4       	brne	.+44     	; 0xbca <__stack+0x36b>
+				{
+					status[x][y+1] = game[x][y+1];
+     b9e:	66 0f       	add	r22, r22
+     ba0:	77 1f       	adc	r23, r23
+     ba2:	66 0f       	add	r22, r22
+     ba4:	77 1f       	adc	r23, r23
+     ba6:	66 0f       	add	r22, r22
+     ba8:	77 1f       	adc	r23, r23
+     baa:	66 52       	subi	r22, 0x26	; 38
+     bac:	7d 4f       	sbci	r23, 0xFD	; 253
+     bae:	fb 01       	movw	r30, r22
+     bb0:	e2 0f       	add	r30, r18
+     bb2:	f3 1f       	adc	r31, r19
+     bb4:	40 83       	st	Z, r20
+					set_display(x,y+1,status[x][y+1],0);
+     bb6:	61 e0       	ldi	r22, 0x01	; 1
+     bb8:	69 0f       	add	r22, r25
+     bba:	20 e0       	ldi	r18, 0x00	; 0
+     bbc:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     bc0:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     bc4:	8f 5f       	subi	r24, 0xFF	; 255
+     bc6:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+					//_delay_ms(10);
+				}
+				if(x > 0 && y > 0 && game[x-1][y-1] != 10 && status[x-1][y-1] == 12) // x-1  y-1
+     bca:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     bce:	88 23       	and	r24, r24
+     bd0:	09 f4       	brne	.+2      	; 0xbd4 <__stack+0x375>
+     bd2:	47 c0       	rjmp	.+142    	; 0xc62 <__stack+0x403>
+     bd4:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+     bd8:	99 23       	and	r25, r25
+     bda:	09 f4       	brne	.+2      	; 0xbde <__stack+0x37f>
+     bdc:	3c c2       	rjmp	.+1144   	; 0x1056 <__stack+0x7f7>
+     bde:	28 2f       	mov	r18, r24
+     be0:	30 e0       	ldi	r19, 0x00	; 0
+     be2:	21 50       	subi	r18, 0x01	; 1
+     be4:	31 09       	sbc	r19, r1
+     be6:	69 2f       	mov	r22, r25
+     be8:	70 e0       	ldi	r23, 0x00	; 0
+     bea:	61 50       	subi	r22, 0x01	; 1
+     bec:	71 09       	sbc	r23, r1
+     bee:	f9 01       	movw	r30, r18
+     bf0:	ee 0f       	add	r30, r30
+     bf2:	ff 1f       	adc	r31, r31
+     bf4:	ee 0f       	add	r30, r30
+     bf6:	ff 1f       	adc	r31, r31
+     bf8:	ee 0f       	add	r30, r30
+     bfa:	ff 1f       	adc	r31, r31
+     bfc:	e9 56       	subi	r30, 0x69	; 105
+     bfe:	fd 4f       	sbci	r31, 0xFD	; 253
+     c00:	e6 0f       	add	r30, r22
+     c02:	f7 1f       	adc	r31, r23
+     c04:	40 81       	ld	r20, Z
+     c06:	4a 30       	cpi	r20, 0x0A	; 10
+     c08:	09 f4       	brne	.+2      	; 0xc0c <__stack+0x3ad>
+     c0a:	f9 c1       	rjmp	.+1010   	; 0xffe <__stack+0x79f>
+     c0c:	f9 01       	movw	r30, r18
+     c0e:	ee 0f       	add	r30, r30
+     c10:	ff 1f       	adc	r31, r31
+     c12:	ee 0f       	add	r30, r30
+     c14:	ff 1f       	adc	r31, r31
+     c16:	ee 0f       	add	r30, r30
+     c18:	ff 1f       	adc	r31, r31
+     c1a:	e6 52       	subi	r30, 0x26	; 38
+     c1c:	fd 4f       	sbci	r31, 0xFD	; 253
+     c1e:	e6 0f       	add	r30, r22
+     c20:	f7 1f       	adc	r31, r23
+     c22:	50 81       	ld	r21, Z
+     c24:	5c 30       	cpi	r21, 0x0C	; 12
+     c26:	09 f0       	breq	.+2      	; 0xc2a <__stack+0x3cb>
+     c28:	ea c1       	rjmp	.+980    	; 0xffe <__stack+0x79f>
+				{
+					status[x-1][y-1] = game[x-1][y-1];
+     c2a:	22 0f       	add	r18, r18
+     c2c:	33 1f       	adc	r19, r19
+     c2e:	22 0f       	add	r18, r18
+     c30:	33 1f       	adc	r19, r19
+     c32:	22 0f       	add	r18, r18
+     c34:	33 1f       	adc	r19, r19
+     c36:	26 52       	subi	r18, 0x26	; 38
+     c38:	3d 4f       	sbci	r19, 0xFD	; 253
+     c3a:	f9 01       	movw	r30, r18
+     c3c:	e6 0f       	add	r30, r22
+     c3e:	f7 1f       	adc	r31, r23
+     c40:	40 83       	st	Z, r20
+					set_display(x-1,y-1,status[x-1][y-1],0);
+     c42:	6f ef       	ldi	r22, 0xFF	; 255
+     c44:	69 0f       	add	r22, r25
+     c46:	20 e0       	ldi	r18, 0x00	; 0
+     c48:	81 50       	subi	r24, 0x01	; 1
+     c4a:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     c4e:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     c52:	8f 5f       	subi	r24, 0xFF	; 255
+     c54:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+					//_delay_ms(10);
+				}
+				if(x < 7 && y > 0 && game[x+1][y-1] != 10 && status[x+1][y-1] == 12) // x+1 y-1
+     c58:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     c5c:	87 30       	cpi	r24, 0x07	; 7
+     c5e:	08 f0       	brcs	.+2      	; 0xc62 <__stack+0x403>
+     c60:	40 c0       	rjmp	.+128    	; 0xce2 <__stack+0x483>
+     c62:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+     c66:	99 23       	and	r25, r25
+     c68:	09 f4       	brne	.+2      	; 0xc6c <__stack+0x40d>
+     c6a:	cc c1       	rjmp	.+920    	; 0x1004 <__stack+0x7a5>
+     c6c:	28 2f       	mov	r18, r24
+     c6e:	30 e0       	ldi	r19, 0x00	; 0
+     c70:	2f 5f       	subi	r18, 0xFF	; 255
+     c72:	3f 4f       	sbci	r19, 0xFF	; 255
+     c74:	69 2f       	mov	r22, r25
+     c76:	70 e0       	ldi	r23, 0x00	; 0
+     c78:	61 50       	subi	r22, 0x01	; 1
+     c7a:	71 09       	sbc	r23, r1
+     c7c:	f9 01       	movw	r30, r18
+     c7e:	ee 0f       	add	r30, r30
+     c80:	ff 1f       	adc	r31, r31
+     c82:	ee 0f       	add	r30, r30
+     c84:	ff 1f       	adc	r31, r31
+     c86:	ee 0f       	add	r30, r30
+     c88:	ff 1f       	adc	r31, r31
+     c8a:	e9 56       	subi	r30, 0x69	; 105
+     c8c:	fd 4f       	sbci	r31, 0xFD	; 253
+     c8e:	e6 0f       	add	r30, r22
+     c90:	f7 1f       	adc	r31, r23
+     c92:	40 81       	ld	r20, Z
+     c94:	4a 30       	cpi	r20, 0x0A	; 10
+     c96:	29 f1       	breq	.+74     	; 0xce2 <__stack+0x483>
+     c98:	f9 01       	movw	r30, r18
+     c9a:	ee 0f       	add	r30, r30
+     c9c:	ff 1f       	adc	r31, r31
+     c9e:	ee 0f       	add	r30, r30
+     ca0:	ff 1f       	adc	r31, r31
+     ca2:	ee 0f       	add	r30, r30
+     ca4:	ff 1f       	adc	r31, r31
+     ca6:	e6 52       	subi	r30, 0x26	; 38
+     ca8:	fd 4f       	sbci	r31, 0xFD	; 253
+     caa:	e6 0f       	add	r30, r22
+     cac:	f7 1f       	adc	r31, r23
+     cae:	50 81       	ld	r21, Z
+     cb0:	5c 30       	cpi	r21, 0x0C	; 12
+     cb2:	b9 f4       	brne	.+46     	; 0xce2 <__stack+0x483>
+				{
+					status[x+1][y-1] = game[x+1][y-1];
+     cb4:	22 0f       	add	r18, r18
+     cb6:	33 1f       	adc	r19, r19
+     cb8:	22 0f       	add	r18, r18
+     cba:	33 1f       	adc	r19, r19
+     cbc:	22 0f       	add	r18, r18
+     cbe:	33 1f       	adc	r19, r19
+     cc0:	26 52       	subi	r18, 0x26	; 38
+     cc2:	3d 4f       	sbci	r19, 0xFD	; 253
+     cc4:	f9 01       	movw	r30, r18
+     cc6:	e6 0f       	add	r30, r22
+     cc8:	f7 1f       	adc	r31, r23
+     cca:	40 83       	st	Z, r20
+					set_display(x+1,y-1,status[x+1][y-1],0);
+     ccc:	6f ef       	ldi	r22, 0xFF	; 255
+     cce:	69 0f       	add	r22, r25
+     cd0:	20 e0       	ldi	r18, 0x00	; 0
+     cd2:	8f 5f       	subi	r24, 0xFF	; 255
+     cd4:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     cd8:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     cdc:	8f 5f       	subi	r24, 0xFF	; 255
+     cde:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+					//_delay_ms(10);
+				}
+				if(x > 0 && y < 7 && game[x-1][y+1] != 10 && status[x-1][y+1] == 12) // x-1  y+1
+     ce2:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     ce6:	88 23       	and	r24, r24
+     ce8:	09 f4       	brne	.+2      	; 0xcec <__stack+0x48d>
+     cea:	49 c0       	rjmp	.+146    	; 0xd7e <__stack+0x51f>
+     cec:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+     cf0:	97 30       	cpi	r25, 0x07	; 7
+     cf2:	08 f0       	brcs	.+2      	; 0xcf6 <__stack+0x497>
+     cf4:	d9 c0       	rjmp	.+434    	; 0xea8 <__stack+0x649>
+     cf6:	01 c0       	rjmp	.+2      	; 0xcfa <__stack+0x49b>
+     cf8:	90 e0       	ldi	r25, 0x00	; 0
+     cfa:	28 2f       	mov	r18, r24
+     cfc:	30 e0       	ldi	r19, 0x00	; 0
+     cfe:	21 50       	subi	r18, 0x01	; 1
+     d00:	31 09       	sbc	r19, r1
+     d02:	69 2f       	mov	r22, r25
+     d04:	70 e0       	ldi	r23, 0x00	; 0
+     d06:	6f 5f       	subi	r22, 0xFF	; 255
+     d08:	7f 4f       	sbci	r23, 0xFF	; 255
+     d0a:	f9 01       	movw	r30, r18
+     d0c:	ee 0f       	add	r30, r30
+     d0e:	ff 1f       	adc	r31, r31
+     d10:	ee 0f       	add	r30, r30
+     d12:	ff 1f       	adc	r31, r31
+     d14:	ee 0f       	add	r30, r30
+     d16:	ff 1f       	adc	r31, r31
+     d18:	e9 56       	subi	r30, 0x69	; 105
+     d1a:	fd 4f       	sbci	r31, 0xFD	; 253
+     d1c:	e6 0f       	add	r30, r22
+     d1e:	f7 1f       	adc	r31, r23
+     d20:	40 81       	ld	r20, Z
+     d22:	4a 30       	cpi	r20, 0x0A	; 10
+     d24:	09 f4       	brne	.+2      	; 0xd28 <__stack+0x4c9>
+     d26:	76 c1       	rjmp	.+748    	; 0x1014 <__stack+0x7b5>
+     d28:	f9 01       	movw	r30, r18
+     d2a:	ee 0f       	add	r30, r30
+     d2c:	ff 1f       	adc	r31, r31
+     d2e:	ee 0f       	add	r30, r30
+     d30:	ff 1f       	adc	r31, r31
+     d32:	ee 0f       	add	r30, r30
+     d34:	ff 1f       	adc	r31, r31
+     d36:	e6 52       	subi	r30, 0x26	; 38
+     d38:	fd 4f       	sbci	r31, 0xFD	; 253
+     d3a:	e6 0f       	add	r30, r22
+     d3c:	f7 1f       	adc	r31, r23
+     d3e:	50 81       	ld	r21, Z
+     d40:	5c 30       	cpi	r21, 0x0C	; 12
+     d42:	09 f0       	breq	.+2      	; 0xd46 <__stack+0x4e7>
+     d44:	67 c1       	rjmp	.+718    	; 0x1014 <__stack+0x7b5>
+				{
+					status[x-1][y+1] = game[x-1][y+1];
+     d46:	22 0f       	add	r18, r18
+     d48:	33 1f       	adc	r19, r19
+     d4a:	22 0f       	add	r18, r18
+     d4c:	33 1f       	adc	r19, r19
+     d4e:	22 0f       	add	r18, r18
+     d50:	33 1f       	adc	r19, r19
+     d52:	26 52       	subi	r18, 0x26	; 38
+     d54:	3d 4f       	sbci	r19, 0xFD	; 253
+     d56:	f9 01       	movw	r30, r18
+     d58:	e6 0f       	add	r30, r22
+     d5a:	f7 1f       	adc	r31, r23
+     d5c:	40 83       	st	Z, r20
+					set_display(x-1,y+1,status[x-1][y+1],0);
+     d5e:	61 e0       	ldi	r22, 0x01	; 1
+     d60:	69 0f       	add	r22, r25
+     d62:	20 e0       	ldi	r18, 0x00	; 0
+     d64:	81 50       	subi	r24, 0x01	; 1
+     d66:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     d6a:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     d6e:	8f 5f       	subi	r24, 0xFF	; 255
+     d70:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+					//_delay_ms(10);
+				}
+				if(x < 7 && y < 7 && game[x+1][y+1] != 10 && status[x+1][y+1] == 12) // x+1  y+1
+     d74:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     d78:	87 30       	cpi	r24, 0x07	; 7
+     d7a:	08 f0       	brcs	.+2      	; 0xd7e <__stack+0x51f>
+     d7c:	95 c0       	rjmp	.+298    	; 0xea8 <__stack+0x649>
+     d7e:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+     d82:	97 30       	cpi	r25, 0x07	; 7
+     d84:	08 f0       	brcs	.+2      	; 0xd88 <__stack+0x529>
+     d86:	90 c0       	rjmp	.+288    	; 0xea8 <__stack+0x649>
+     d88:	28 2f       	mov	r18, r24
+     d8a:	30 e0       	ldi	r19, 0x00	; 0
+     d8c:	2f 5f       	subi	r18, 0xFF	; 255
+     d8e:	3f 4f       	sbci	r19, 0xFF	; 255
+     d90:	69 2f       	mov	r22, r25
+     d92:	70 e0       	ldi	r23, 0x00	; 0
+     d94:	6f 5f       	subi	r22, 0xFF	; 255
+     d96:	7f 4f       	sbci	r23, 0xFF	; 255
+     d98:	f9 01       	movw	r30, r18
+     d9a:	ee 0f       	add	r30, r30
+     d9c:	ff 1f       	adc	r31, r31
+     d9e:	ee 0f       	add	r30, r30
+     da0:	ff 1f       	adc	r31, r31
+     da2:	ee 0f       	add	r30, r30
+     da4:	ff 1f       	adc	r31, r31
+     da6:	e9 56       	subi	r30, 0x69	; 105
+     da8:	fd 4f       	sbci	r31, 0xFD	; 253
+     daa:	e6 0f       	add	r30, r22
+     dac:	f7 1f       	adc	r31, r23
+     dae:	40 81       	ld	r20, Z
+     db0:	4a 30       	cpi	r20, 0x0A	; 10
+     db2:	09 f4       	brne	.+2      	; 0xdb6 <__stack+0x557>
+     db4:	79 c0       	rjmp	.+242    	; 0xea8 <__stack+0x649>
+     db6:	f9 01       	movw	r30, r18
+     db8:	ee 0f       	add	r30, r30
+     dba:	ff 1f       	adc	r31, r31
+     dbc:	ee 0f       	add	r30, r30
+     dbe:	ff 1f       	adc	r31, r31
+     dc0:	ee 0f       	add	r30, r30
+     dc2:	ff 1f       	adc	r31, r31
+     dc4:	e6 52       	subi	r30, 0x26	; 38
+     dc6:	fd 4f       	sbci	r31, 0xFD	; 253
+     dc8:	e6 0f       	add	r30, r22
+     dca:	f7 1f       	adc	r31, r23
+     dcc:	50 81       	ld	r21, Z
+     dce:	5c 30       	cpi	r21, 0x0C	; 12
+     dd0:	09 f0       	breq	.+2      	; 0xdd4 <__stack+0x575>
+     dd2:	6a c0       	rjmp	.+212    	; 0xea8 <__stack+0x649>
+				{
+					status[x+1][y+1] = game[x+1][y+1];
+     dd4:	22 0f       	add	r18, r18
+     dd6:	33 1f       	adc	r19, r19
+     dd8:	22 0f       	add	r18, r18
+     dda:	33 1f       	adc	r19, r19
+     ddc:	22 0f       	add	r18, r18
+     dde:	33 1f       	adc	r19, r19
+     de0:	26 52       	subi	r18, 0x26	; 38
+     de2:	3d 4f       	sbci	r19, 0xFD	; 253
+     de4:	f9 01       	movw	r30, r18
+     de6:	e6 0f       	add	r30, r22
+     de8:	f7 1f       	adc	r31, r23
+     dea:	40 83       	st	Z, r20
+					set_display(x+1,y+1,status[x+1][y+1],0);
+     dec:	61 e0       	ldi	r22, 0x01	; 1
+     dee:	69 0f       	add	r22, r25
+     df0:	20 e0       	ldi	r18, 0x00	; 0
+     df2:	8f 5f       	subi	r24, 0xFF	; 255
+     df4:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+					count++;
+     df8:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     dfc:	8f 5f       	subi	r24, 0xFF	; 255
+     dfe:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+     e02:	52 c0       	rjmp	.+164    	; 0xea8 <__stack+0x649>
+					//_delay_ms(10);
+				}
+			}
+			else if( temp == 10) // lose
+     e04:	4a 30       	cpi	r20, 0x0A	; 10
+     e06:	09 f0       	breq	.+2      	; 0xe0a <__stack+0x5ab>
+     e08:	4f c0       	rjmp	.+158    	; 0xea8 <__stack+0x649>
+			{
+				status[x][y] = temp;
+     e0a:	22 0f       	add	r18, r18
+     e0c:	33 1f       	adc	r19, r19
+     e0e:	22 0f       	add	r18, r18
+     e10:	33 1f       	adc	r19, r19
+     e12:	22 0f       	add	r18, r18
+     e14:	33 1f       	adc	r19, r19
+     e16:	26 52       	subi	r18, 0x26	; 38
+     e18:	3d 4f       	sbci	r19, 0xFD	; 253
+     e1a:	a2 0f       	add	r26, r18
+     e1c:	b3 1f       	adc	r27, r19
+     e1e:	2c 92       	st	X, r2
+				set_display(x,y,status[x][y],1);
+     e20:	21 e0       	ldi	r18, 0x01	; 1
+     e22:	4a 81       	ldd	r20, Y+2	; 0x02
+     e24:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+     e28:	0f 2e       	mov	r0, r31
+     e2a:	f7 e9       	ldi	r31, 0x97	; 151
+     e2c:	8f 2e       	mov	r8, r31
+     e2e:	f2 e0       	ldi	r31, 0x02	; 2
+     e30:	9f 2e       	mov	r9, r31
+     e32:	f0 2d       	mov	r31, r0
+     e34:	0f 2e       	mov	r0, r31
+     e36:	fa ed       	ldi	r31, 0xDA	; 218
+     e38:	cf 2e       	mov	r12, r31
+     e3a:	f2 e0       	ldi	r31, 0x02	; 2
+     e3c:	df 2e       	mov	r13, r31
+     e3e:	f0 2d       	mov	r31, r0
+				for(unsigned char i =0; i<8; i+=1)
+     e40:	71 2c       	mov	r7, r1
+     e42:	21 c0       	rjmp	.+66     	; 0xe86 <__stack+0x627>
+				for(unsigned char j =0; j<8; j+=1)
+				{
+					if( game[i][j] == 10 && status[i][j] == 12)
+     e44:	f7 01       	movw	r30, r14
+     e46:	81 91       	ld	r24, Z+
+     e48:	7f 01       	movw	r14, r30
+     e4a:	8a 30       	cpi	r24, 0x0A	; 10
+     e4c:	59 f4       	brne	.+22     	; 0xe64 <__stack+0x605>
+     e4e:	f8 01       	movw	r30, r16
+     e50:	80 81       	ld	r24, Z
+     e52:	8c 30       	cpi	r24, 0x0C	; 12
+     e54:	39 f4       	brne	.+14     	; 0xe64 <__stack+0x605>
+					{
+						status[i][j] = game[i][j];
+     e56:	20 82       	st	Z, r2
+						set_display(i,j,status[i][j],0);
+     e58:	20 e0       	ldi	r18, 0x00	; 0
+     e5a:	49 81       	ldd	r20, Y+1	; 0x01
+     e5c:	6b 81       	ldd	r22, Y+3	; 0x03
+     e5e:	87 2d       	mov	r24, r7
+     e60:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+			else if( temp == 10) // lose
+			{
+				status[x][y] = temp;
+				set_display(x,y,status[x][y],1);
+				for(unsigned char i =0; i<8; i+=1)
+				for(unsigned char j =0; j<8; j+=1)
+     e64:	fb 81       	ldd	r31, Y+3	; 0x03
+     e66:	ff 5f       	subi	r31, 0xFF	; 255
+     e68:	fb 83       	std	Y+3, r31	; 0x03
+     e6a:	0f 5f       	subi	r16, 0xFF	; 255
+     e6c:	1f 4f       	sbci	r17, 0xFF	; 255
+     e6e:	f8 30       	cpi	r31, 0x08	; 8
+     e70:	49 f7       	brne	.-46     	; 0xe44 <__stack+0x5e5>
+			}
+			else if( temp == 10) // lose
+			{
+				status[x][y] = temp;
+				set_display(x,y,status[x][y],1);
+				for(unsigned char i =0; i<8; i+=1)
+     e72:	73 94       	inc	r7
+     e74:	28 e0       	ldi	r18, 0x08	; 8
+     e76:	82 0e       	add	r8, r18
+     e78:	91 1c       	adc	r9, r1
+     e7a:	88 e0       	ldi	r24, 0x08	; 8
+     e7c:	c8 0e       	add	r12, r24
+     e7e:	d1 1c       	adc	r13, r1
+     e80:	98 e0       	ldi	r25, 0x08	; 8
+     e82:	79 16       	cp	r7, r25
+     e84:	21 f0       	breq	.+8      	; 0xe8e <__stack+0x62f>
+					status[x+1][y-1] = game[x+1][y-1];
+					set_display(x+1,y-1,status[x+1][y-1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x > 0 && y < 7 && game[x-1][y+1] != 10 && status[x-1][y+1] == 12) // x-1  y+1
+     e86:	86 01       	movw	r16, r12
+     e88:	74 01       	movw	r14, r8
+     e8a:	1b 82       	std	Y+3, r1	; 0x03
+     e8c:	db cf       	rjmp	.-74     	; 0xe44 <__stack+0x5e5>
+						status[i][j] = game[i][j];
+						set_display(i,j,status[i][j],0);
+					}
+				}
+				
+				glcd_game_over();
+     e8e:	0e 94 98 01 	call	0x330	; 0x330 <glcd_game_over>
+     e92:	ef ef       	ldi	r30, 0xFF	; 255
+     e94:	f6 e7       	ldi	r31, 0x76	; 118
+     e96:	21 e0       	ldi	r18, 0x01	; 1
+     e98:	e1 50       	subi	r30, 0x01	; 1
+     e9a:	f0 40       	sbci	r31, 0x00	; 0
+     e9c:	20 40       	sbci	r18, 0x00	; 0
+     e9e:	e1 f7       	brne	.-8      	; 0xe98 <__stack+0x639>
+     ea0:	00 c0       	rjmp	.+0      	; 0xea2 <__stack+0x643>
+     ea2:	00 00       	nop
+				_delay_ms(60);
+				game_initialization();
+     ea4:	0e 94 38 03 	call	0x670	; 0x670 <game_initialization>
+     ea8:	8f e3       	ldi	r24, 0x3F	; 63
+     eaa:	9c e9       	ldi	r25, 0x9C	; 156
+     eac:	01 97       	sbiw	r24, 0x01	; 1
+     eae:	f1 f7       	brne	.-4      	; 0xeac <__stack+0x64d>
+     eb0:	00 c0       	rjmp	.+0      	; 0xeb2 <__stack+0x653>
+     eb2:	00 00       	nop
+			}
+		}
+		_delay_ms(20);
+	}
+	if (PINB & (1<<5)) // flag
+     eb4:	b5 9b       	sbis	0x16, 5	; 22
+     eb6:	6d c0       	rjmp	.+218    	; 0xf92 <__stack+0x733>
+	{
+		if(status[x][y] == 12)
+     eb8:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     ebc:	28 2f       	mov	r18, r24
+     ebe:	30 e0       	ldi	r19, 0x00	; 0
+     ec0:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+     ec4:	46 2f       	mov	r20, r22
+     ec6:	50 e0       	ldi	r21, 0x00	; 0
+     ec8:	f9 01       	movw	r30, r18
+     eca:	ee 0f       	add	r30, r30
+     ecc:	ff 1f       	adc	r31, r31
+     ece:	ee 0f       	add	r30, r30
+     ed0:	ff 1f       	adc	r31, r31
+     ed2:	ee 0f       	add	r30, r30
+     ed4:	ff 1f       	adc	r31, r31
+     ed6:	e6 52       	subi	r30, 0x26	; 38
+     ed8:	fd 4f       	sbci	r31, 0xFD	; 253
+     eda:	e4 0f       	add	r30, r20
+     edc:	f5 1f       	adc	r31, r21
+     ede:	90 81       	ld	r25, Z
+     ee0:	9c 30       	cpi	r25, 0x0C	; 12
+     ee2:	41 f5       	brne	.+80     	; 0xf34 <__stack+0x6d5>
+		{
+			status[x][y] = 11;
+     ee4:	22 0f       	add	r18, r18
+     ee6:	33 1f       	adc	r19, r19
+     ee8:	22 0f       	add	r18, r18
+     eea:	33 1f       	adc	r19, r19
+     eec:	22 0f       	add	r18, r18
+     eee:	33 1f       	adc	r19, r19
+     ef0:	26 52       	subi	r18, 0x26	; 38
+     ef2:	3d 4f       	sbci	r19, 0xFD	; 253
+     ef4:	f9 01       	movw	r30, r18
+     ef6:	e4 0f       	add	r30, r20
+     ef8:	f5 1f       	adc	r31, r21
+     efa:	60 82       	st	Z, r6
+			set_display(x,y,status[x][y],1);
+     efc:	21 e0       	ldi	r18, 0x01	; 1
+     efe:	45 2d       	mov	r20, r5
+     f00:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+			if( game[x][y] == 10)
+     f04:	e0 91 95 02 	lds	r30, 0x0295	; 0x800295 <x>
+     f08:	f0 e0       	ldi	r31, 0x00	; 0
+     f0a:	80 91 94 02 	lds	r24, 0x0294	; 0x800294 <y>
+     f0e:	ee 0f       	add	r30, r30
+     f10:	ff 1f       	adc	r31, r31
+     f12:	ee 0f       	add	r30, r30
+     f14:	ff 1f       	adc	r31, r31
+     f16:	ee 0f       	add	r30, r30
+     f18:	ff 1f       	adc	r31, r31
+     f1a:	e9 56       	subi	r30, 0x69	; 105
+     f1c:	fd 4f       	sbci	r31, 0xFD	; 253
+     f1e:	e8 0f       	add	r30, r24
+     f20:	f1 1d       	adc	r31, r1
+     f22:	80 81       	ld	r24, Z
+     f24:	8a 30       	cpi	r24, 0x0A	; 10
+     f26:	79 f5       	brne	.+94     	; 0xf86 <__stack+0x727>
+			count++;
+     f28:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     f2c:	8f 5f       	subi	r24, 0xFF	; 255
+     f2e:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+     f32:	29 c0       	rjmp	.+82     	; 0xf86 <__stack+0x727>
+		}
+		else if(status[x][y] == 11)
+     f34:	9b 30       	cpi	r25, 0x0B	; 11
+     f36:	39 f5       	brne	.+78     	; 0xf86 <__stack+0x727>
+		{
+			status[x][y] = 12;
+     f38:	22 0f       	add	r18, r18
+     f3a:	33 1f       	adc	r19, r19
+     f3c:	22 0f       	add	r18, r18
+     f3e:	33 1f       	adc	r19, r19
+     f40:	22 0f       	add	r18, r18
+     f42:	33 1f       	adc	r19, r19
+     f44:	26 52       	subi	r18, 0x26	; 38
+     f46:	3d 4f       	sbci	r19, 0xFD	; 253
+     f48:	f9 01       	movw	r30, r18
+     f4a:	e4 0f       	add	r30, r20
+     f4c:	f5 1f       	adc	r31, r21
+     f4e:	40 82       	st	Z, r4
+			set_display(x,y,status[x][y],1);
+     f50:	21 e0       	ldi	r18, 0x01	; 1
+     f52:	43 2d       	mov	r20, r3
+     f54:	0e 94 14 03 	call	0x628	; 0x628 <set_display>
+			if( game[x][y] == 10)
+     f58:	e0 91 95 02 	lds	r30, 0x0295	; 0x800295 <x>
+     f5c:	f0 e0       	ldi	r31, 0x00	; 0
+     f5e:	80 91 94 02 	lds	r24, 0x0294	; 0x800294 <y>
+     f62:	ee 0f       	add	r30, r30
+     f64:	ff 1f       	adc	r31, r31
+     f66:	ee 0f       	add	r30, r30
+     f68:	ff 1f       	adc	r31, r31
+     f6a:	ee 0f       	add	r30, r30
+     f6c:	ff 1f       	adc	r31, r31
+     f6e:	e9 56       	subi	r30, 0x69	; 105
+     f70:	fd 4f       	sbci	r31, 0xFD	; 253
+     f72:	e8 0f       	add	r30, r24
+     f74:	f1 1d       	adc	r31, r1
+     f76:	80 81       	ld	r24, Z
+     f78:	8a 30       	cpi	r24, 0x0A	; 10
+     f7a:	29 f4       	brne	.+10     	; 0xf86 <__stack+0x727>
+			count--;
+     f7c:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     f80:	81 50       	subi	r24, 0x01	; 1
+     f82:	80 93 92 02 	sts	0x0292, r24	; 0x800292 <__data_end>
+     f86:	ef e3       	ldi	r30, 0x3F	; 63
+     f88:	fc e9       	ldi	r31, 0x9C	; 156
+     f8a:	31 97       	sbiw	r30, 0x01	; 1
+     f8c:	f1 f7       	brne	.-4      	; 0xf8a <__stack+0x72b>
+     f8e:	00 c0       	rjmp	.+0      	; 0xf90 <__stack+0x731>
+     f90:	00 00       	nop
+		}
+		_delay_ms(20);
+	}
+	if(count == 64)  // win
+     f92:	80 91 92 02 	lds	r24, 0x0292	; 0x800292 <__data_end>
+     f96:	80 34       	cpi	r24, 0x40	; 64
+     f98:	09 f0       	breq	.+2      	; 0xf9c <__stack+0x73d>
+     f9a:	40 cc       	rjmp	.-1920   	; 0x81c <main+0x4a>
+	{
+		glcd_victory();
+     f9c:	0e 94 cb 01 	call	0x396	; 0x396 <glcd_victory>
+		level = (level+1) % 5;
+     fa0:	80 91 93 02 	lds	r24, 0x0293	; 0x800293 <level>
+     fa4:	90 e0       	ldi	r25, 0x00	; 0
+     fa6:	01 96       	adiw	r24, 0x01	; 1
+     fa8:	b5 01       	movw	r22, r10
+     faa:	0e 94 3a 08 	call	0x1074	; 0x1074 <__divmodhi4>
+     fae:	80 93 93 02 	sts	0x0293, r24	; 0x800293 <level>
+     fb2:	8f e5       	ldi	r24, 0x5F	; 95
+     fb4:	9a ee       	ldi	r25, 0xEA	; 234
+     fb6:	01 97       	sbiw	r24, 0x01	; 1
+     fb8:	f1 f7       	brne	.-4      	; 0xfb6 <__stack+0x757>
+     fba:	00 c0       	rjmp	.+0      	; 0xfbc <__stack+0x75d>
+     fbc:	00 00       	nop
+		_delay_ms(30);
+		game_initialization();
+     fbe:	0e 94 38 03 	call	0x670	; 0x670 <game_initialization>
+     fc2:	2c cc       	rjmp	.-1960   	; 0x81c <main+0x4a>
+					status[x][y-1] = game[x][y-1];
+					set_display(x,y-1,status[x][y-1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x < 7 && game[x+1][y] != 10 && status[x+1][y] == 12) // x+1
+     fc4:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+     fc8:	87 30       	cpi	r24, 0x07	; 7
+     fca:	68 f1       	brcs	.+90     	; 0x1026 <__stack+0x7c7>
+     fcc:	c4 cd       	rjmp	.-1144   	; 0xb56 <__stack+0x2f7>
+					status[x-1][y-1] = game[x-1][y-1];
+					set_display(x-1,y-1,status[x-1][y-1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x < 7 && y > 0 && game[x+1][y-1] != 10 && status[x+1][y-1] == 12) // x+1 y-1
+     fce:	28 2f       	mov	r18, r24
+     fd0:	30 e0       	ldi	r19, 0x00	; 0
+     fd2:	2f 5f       	subi	r18, 0xFF	; 255
+     fd4:	3f 4f       	sbci	r19, 0xFF	; 255
+     fd6:	69 2f       	mov	r22, r25
+     fd8:	70 e0       	ldi	r23, 0x00	; 0
+     fda:	61 50       	subi	r22, 0x01	; 1
+     fdc:	71 09       	sbc	r23, r1
+     fde:	f9 01       	movw	r30, r18
+     fe0:	ee 0f       	add	r30, r30
+     fe2:	ff 1f       	adc	r31, r31
+     fe4:	ee 0f       	add	r30, r30
+     fe6:	ff 1f       	adc	r31, r31
+     fe8:	ee 0f       	add	r30, r30
+     fea:	ff 1f       	adc	r31, r31
+     fec:	e9 56       	subi	r30, 0x69	; 105
+     fee:	fd 4f       	sbci	r31, 0xFD	; 253
+     ff0:	e6 0f       	add	r30, r22
+     ff2:	f7 1f       	adc	r31, r23
+     ff4:	40 81       	ld	r20, Z
+     ff6:	4a 30       	cpi	r20, 0x0A	; 10
+     ff8:	09 f0       	breq	.+2      	; 0xffc <__stack+0x79d>
+     ffa:	4e ce       	rjmp	.-868    	; 0xc98 <__stack+0x439>
+     ffc:	32 c0       	rjmp	.+100    	; 0x1062 <__stack+0x803>
+     ffe:	87 30       	cpi	r24, 0x07	; 7
+    1000:	98 f5       	brcc	.+102    	; 0x1068 <__stack+0x809>
+    1002:	e5 cf       	rjmp	.-54     	; 0xfce <__stack+0x76f>
+					status[x+1][y-1] = game[x+1][y-1];
+					set_display(x+1,y-1,status[x+1][y-1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x > 0 && y < 7 && game[x-1][y+1] != 10 && status[x-1][y+1] == 12) // x-1  y+1
+    1004:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+    1008:	81 11       	cpse	r24, r1
+    100a:	76 ce       	rjmp	.-788    	; 0xcf8 <__stack+0x499>
+    100c:	30 c0       	rjmp	.+96     	; 0x106e <__stack+0x80f>
+					status[x-1][y+1] = game[x-1][y+1];
+					set_display(x-1,y+1,status[x-1][y+1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x < 7 && y < 7 && game[x+1][y+1] != 10 && status[x+1][y+1] == 12) // x+1  y+1
+    100e:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+    1012:	ba ce       	rjmp	.-652    	; 0xd88 <__stack+0x529>
+    1014:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+    1018:	87 30       	cpi	r24, 0x07	; 7
+    101a:	08 f0       	brcs	.+2      	; 0x101e <__stack+0x7bf>
+    101c:	45 cf       	rjmp	.-374    	; 0xea8 <__stack+0x649>
+    101e:	f7 cf       	rjmp	.-18     	; 0x100e <__stack+0x7af>
+					status[x+1][y] = game[x+1][y];
+					set_display(x+1,y,status[x+1][y],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(y < 7 && game[x][y+1] != 10 && status[x][y+1] == 12) // y+1
+    1020:	90 91 94 02 	lds	r25, 0x0294	; 0x800294 <y>
+    1024:	98 cd       	rjmp	.-1232   	; 0xb56 <__stack+0x2f7>
+					status[x][y-1] = game[x][y-1];
+					set_display(x,y-1,status[x][y-1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x < 7 && game[x+1][y] != 10 && status[x+1][y] == 12) // x+1
+    1026:	28 2f       	mov	r18, r24
+    1028:	30 e0       	ldi	r19, 0x00	; 0
+    102a:	2f 5f       	subi	r18, 0xFF	; 255
+    102c:	3f 4f       	sbci	r19, 0xFF	; 255
+    102e:	60 91 94 02 	lds	r22, 0x0294	; 0x800294 <y>
+    1032:	a6 2f       	mov	r26, r22
+    1034:	b0 e0       	ldi	r27, 0x00	; 0
+    1036:	f9 01       	movw	r30, r18
+    1038:	ee 0f       	add	r30, r30
+    103a:	ff 1f       	adc	r31, r31
+    103c:	ee 0f       	add	r30, r30
+    103e:	ff 1f       	adc	r31, r31
+    1040:	ee 0f       	add	r30, r30
+    1042:	ff 1f       	adc	r31, r31
+    1044:	e9 56       	subi	r30, 0x69	; 105
+    1046:	fd 4f       	sbci	r31, 0xFD	; 253
+    1048:	ea 0f       	add	r30, r26
+    104a:	fb 1f       	adc	r31, r27
+    104c:	40 81       	ld	r20, Z
+    104e:	4a 30       	cpi	r20, 0x0A	; 10
+    1050:	09 f0       	breq	.+2      	; 0x1054 <__stack+0x7f5>
+    1052:	65 cd       	rjmp	.-1334   	; 0xb1e <__stack+0x2bf>
+    1054:	e5 cf       	rjmp	.-54     	; 0x1020 <__stack+0x7c1>
+					status[x-1][y-1] = game[x-1][y-1];
+					set_display(x-1,y-1,status[x-1][y-1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x < 7 && y > 0 && game[x+1][y-1] != 10 && status[x+1][y-1] == 12) // x+1 y-1
+    1056:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+    105a:	87 30       	cpi	r24, 0x07	; 7
+    105c:	08 f0       	brcs	.+2      	; 0x1060 <__stack+0x801>
+    105e:	41 ce       	rjmp	.-894    	; 0xce2 <__stack+0x483>
+    1060:	d1 cf       	rjmp	.-94     	; 0x1004 <__stack+0x7a5>
+					status[x+1][y-1] = game[x+1][y-1];
+					set_display(x+1,y-1,status[x+1][y-1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x > 0 && y < 7 && game[x-1][y+1] != 10 && status[x-1][y+1] == 12) // x-1  y+1
+    1062:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+    1066:	42 ce       	rjmp	.-892    	; 0xcec <__stack+0x48d>
+    1068:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+    106c:	3f ce       	rjmp	.-898    	; 0xcec <__stack+0x48d>
+					status[x-1][y+1] = game[x-1][y+1];
+					set_display(x-1,y+1,status[x-1][y+1],0);
+					count++;
+					//_delay_ms(10);
+				}
+				if(x < 7 && y < 7 && game[x+1][y+1] != 10 && status[x+1][y+1] == 12) // x+1  y+1
+    106e:	80 91 95 02 	lds	r24, 0x0295	; 0x800295 <x>
+    1072:	85 ce       	rjmp	.-758    	; 0xd7e <__stack+0x51f>
+
+00001074 <__divmodhi4>:
+    1074:	97 fb       	bst	r25, 7
+    1076:	07 2e       	mov	r0, r23
+    1078:	16 f4       	brtc	.+4      	; 0x107e <__divmodhi4+0xa>
+    107a:	00 94       	com	r0
+    107c:	07 d0       	rcall	.+14     	; 0x108c <__divmodhi4_neg1>
+    107e:	77 fd       	sbrc	r23, 7
+    1080:	09 d0       	rcall	.+18     	; 0x1094 <__divmodhi4_neg2>
+    1082:	0e 94 54 08 	call	0x10a8	; 0x10a8 <__udivmodhi4>
+    1086:	07 fc       	sbrc	r0, 7
+    1088:	05 d0       	rcall	.+10     	; 0x1094 <__divmodhi4_neg2>
+    108a:	3e f4       	brtc	.+14     	; 0x109a <__divmodhi4_exit>
+
+0000108c <__divmodhi4_neg1>:
+    108c:	90 95       	com	r25
+    108e:	81 95       	neg	r24
+    1090:	9f 4f       	sbci	r25, 0xFF	; 255
+    1092:	08 95       	ret
+
+00001094 <__divmodhi4_neg2>:
+    1094:	70 95       	com	r23
+    1096:	61 95       	neg	r22
+    1098:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000109a <__divmodhi4_exit>:
+    109a:	08 95       	ret
+
+0000109c <__tablejump2__>:
+    109c:	ee 0f       	add	r30, r30
+    109e:	ff 1f       	adc	r31, r31
+    10a0:	05 90       	lpm	r0, Z+
+    10a2:	f4 91       	lpm	r31, Z
+    10a4:	e0 2d       	mov	r30, r0
+    10a6:	09 94       	ijmp
+
+000010a8 <__udivmodhi4>:
+    10a8:	aa 1b       	sub	r26, r26
+    10aa:	bb 1b       	sub	r27, r27
+    10ac:	51 e1       	ldi	r21, 0x11	; 17
+    10ae:	07 c0       	rjmp	.+14     	; 0x10be <__udivmodhi4_ep>
+
+000010b0 <__udivmodhi4_loop>:
+    10b0:	aa 1f       	adc	r26, r26
+    10b2:	bb 1f       	adc	r27, r27
+    10b4:	a6 17       	cp	r26, r22
+    10b6:	b7 07       	cpc	r27, r23
+    10b8:	10 f0       	brcs	.+4      	; 0x10be <__udivmodhi4_ep>
+    10ba:	a6 1b       	sub	r26, r22
+    10bc:	b7 0b       	sbc	r27, r23
+
+000010be <__udivmodhi4_ep>:
+    10be:	88 1f       	adc	r24, r24
+    10c0:	99 1f       	adc	r25, r25
+    10c2:	5a 95       	dec	r21
+    10c4:	a9 f7       	brne	.-22     	; 0x10b0 <__udivmodhi4_loop>
+    10c6:	80 95       	com	r24
+    10c8:	90 95       	com	r25
+    10ca:	bc 01       	movw	r22, r24
+    10cc:	cd 01       	movw	r24, r26
+    10ce:	08 95       	ret
+
+000010d0 <_exit>:
+    10d0:	f8 94       	cli
+
+000010d2 <__stop_program>:
+    10d2:	ff cf       	rjmp	.-2      	; 0x10d2 <__stop_program>
